@@ -7,15 +7,17 @@ body {
     margin: 0;
 }
 
-.table{
-
+.table {
     position: relative;
     width: 1000px;
     height: 500px;
-    background-color:rgb(96, 66, 14)
-    
-    
-
+    background-color: rgb(96, 66, 14);
+    background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png'); /* Wood texture */
+    background-size: cover;
+    border: 10px solid #5c3e10;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
 }
 
 .square-grill {
@@ -25,10 +27,7 @@ body {
     background-color: #e63909;
     border: 10px solid #555;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-    margin-left: 362.5px;
-    margin-right: 362.5px;
-    margin-bottom: 100px;
-    margin-top: 100px;
+    margin: 100px auto;
 }
 
 .grill-lines-horizontal, .grill-lines-vertical {
@@ -60,4 +59,4 @@ body {
 .grill-lines-vertical:nth-child(9) { left: 100px; }
 .grill-lines-vertical:nth-child(10) { left: 140px; }
 .grill-lines-vertical:nth-child(11) { left: 180px; }
-.grill-lines-vertical:nth-child(12) { left: 220px; } 
+.grill-lines-vertical:nth-child(12) { left: 220px; }

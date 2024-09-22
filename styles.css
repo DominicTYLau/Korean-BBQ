@@ -1,5 +1,8 @@
 
-
+:before,
+:after {
+  content: '';
+}
 h1{
     color: red;
     text-align: center;
@@ -11,42 +14,47 @@ h2{
 }
 
 .meat {
-    @include border-radius(50% / 30% 70% 25% 50%);
-    @include box-shadow(
-      0 0 0 6px rgba(255,255,255,.3) inset,
-      0 0 6px rgba(33,33,33,.3)
-    );
-    position: absolute;
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius: 50% / 30% 70% 25% 50%;
+    box-shadow:
+    0 0 0 6px rgba(255,255,255,.3) inset,
+    0 0 6px rgba(33,33,33,.3);
+    position: relative;
     top: 70px;
     left: 40px;
     width: 80px;
     height: 80px;
-    background: $meat;
+    
+    /* shifting position of the meat */
+    transform: translate(700px,100px); 
+    background: #B45227;
     z-index: 1;
-    
-    &:before,
-    &:after {
-      @include border-radius(45%);
-      @include box-shadow(
-        15px 0 0 0 rgba(33,33,33,.2),
-        30px 0 0 0 rgba(33,33,33,.2)
-      );
-      position: absolute;
-      display: block;
-      width: 4px;
-      height: 60%;
-      background: rgba(33,33,33,.2);
+}
+.meat:before,
+.meat:after {
+    border-radius: 45%;
+    box-shadow:
+    15px 0 0 0 rgba(33,33,33,.2),
+    30px 0 0 0 rgba(33,33,33,.2);
+    position: absolute;
+    display: block;
+    width: 4px;
+    height: 60%;
+    background: rgba(33,33,33,.2);
     }
     
-    &:before {
-      @include transform(rotate(30deg));
-      top: 9px;
-      left: 24px;
+.meat:before {
+    transform: rotate(30deg);
+    top: 9px;
+    left: 24px;
     }
     
-    &:after {
-      @include transform(rotate(-60deg));
-      top: 30px;
-      left: 30px;
+.meat:after {
+    transform: rotate(-60deg);
+    top: 30px;
+    left: 30px;
     }
-  }

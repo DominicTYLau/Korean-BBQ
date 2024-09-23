@@ -80,3 +80,41 @@ body {
 .line4v { left: 145px; }
 .line5v { left: 185px; }
 .line6v { left: 225px; }
+
+
+
+
+:root {
+    --dark-color: #635bff;
+    --light-color: #80e9ff;
+  }
+
+  svg {
+    cursor: pointer;
+  }
+
+  #darkGroup {
+    fill: var(--dark-color);
+  }
+  #lightGroup {
+    fill: var(--light-color);
+  }
+
+
+@keyframes goingUp {
+    0% {bottom: 0;}
+    50% {bottom: 20px;}
+    100% {bottom: 40px;}
+}
+
+svg {
+    animation: goingUp 2s infinite ease-in-out;
+    bottom: 0;
+    display: block;
+    height: 50px;
+    left: 50%;
+    margin-left: -25px;
+    position: absolute;
+    width: 50px;
+    margin-bottom: 6rem;
+}

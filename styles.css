@@ -5,6 +5,7 @@ body {
     height: 100vh;
     background-color: #f4f4f4;
     margin: 0;
+    cursor: url('tongs.png'), auto;
 }
 
 .table {

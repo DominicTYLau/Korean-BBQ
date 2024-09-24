@@ -218,3 +218,255 @@ h2{
     z-index: 1;
 }
 
+/* Shrimp */
+.shrimp {
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius:60% / 30% 40% 10% 70%;
+    background-image:
+    radial-gradient(
+        circle at center right,
+        transparent 67%,
+        #CC4A04 68%,
+        #EF6921 74%,
+        #EF6921 85%,
+        rgba(33,33,33,.2) 86%,
+        transparent 90%
+    );
+    position: relative;
+    top: -35px;
+    left: -10px;
+    display: block;
+    width: 86px;
+    height: 70px;
+    z-index: 1;
+
+    transform: translate(200px,-100px);
+}
+.shrimp:before {
+    transform:rotate(24deg);
+    border-radius:85% 85% 50% 50% / 120% 120% 50% 50%;
+    box-shadow:
+        1px -35px 0 -7px #EF6921,
+        0 -36px 1px -7px rgba(33,33,33,.2),
+        5px -23px 0 -8px #EF6921,
+        5px -23px 1px -7px rgba(33,33,33,.2),
+        0 -2px 0 0 rgba(222,222,222,.3) inset,
+        -2px 1px 2px rgba(33,33,33,.2)
+        ;
+    position: absolute;
+    top: -24px;
+    left: 15px;
+    display: block;
+    width: 18px;
+    height: 45px;
+    background: #EF6921;
+}
+.shrimp:after {
+    border-radius:50%;
+    background-image:
+    radial-gradient(
+        circle at top center,
+        #EF6921 35%,
+        transparent 36%
+    ),
+    radial-gradient(
+        circle at center left,
+        #EF6921 27%,
+        #CC4A04 37%,
+        transparent 38%
+    )
+    ;
+    box-shadow:
+        -13px -86px 0 -9px rgba(222,222,222,.5),
+        -14px -85px 0 -7px rgb(33,33,33)
+    ;
+    position: absolute;
+    top: 60px;
+    left: 25px;
+    display: block;
+    width: 22px;
+    height: 22px;
+}
+.burntShrimp {
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius:60% / 30% 40% 10% 70%;
+    background-image:
+    radial-gradient(
+        circle at center right,
+        transparent 67%,
+        #331201 68%,
+        #572002 74%,
+        #572002 85%,
+        rgba(33,33,33,.2) 86%,
+        transparent 90%
+    );
+    position: relative;
+    top: -35px;
+    left: -10px;
+    display: block;
+    width: 86px;
+    height: 70px;
+    z-index: 1;
+
+    transform: translate(200px,-100px);
+}
+.burntShrimp:before {
+    transform:rotate(24deg);
+    border-radius:85% 85% 50% 50% / 120% 120% 50% 50%;
+    box-shadow:
+        1px -35px 0 -7px #572002,
+        0 -36px 1px -7px rgba(33,33,33,.2),
+        5px -23px 0 -8px #572002,
+        5px -23px 1px -7px rgba(33,33,33,.2),
+        0 -2px 0 0 rgba(222,222,222,.3) inset,
+        -2px 1px 2px rgba(33,33,33,.2)
+        ;
+    position: absolute;
+    top: -24px;
+    left: 15px;
+    display: block;
+    width: 18px;
+    height: 45px;
+    background: #572002;
+}
+.burntShrimp:after {
+    border-radius:50%;
+    background-image:
+    radial-gradient(
+        circle at top center,
+        #572002 35%,
+        transparent 36%
+    ),
+    radial-gradient(
+        circle at center left,
+        #572002 27%,
+        #270f02 37%,
+        transparent 38%
+    )
+    ;
+    box-shadow:
+        -13px -86px 0 -9px rgba(222,222,222,.5),
+        -14px -85px 0 -7px rgb(33,33,33)
+    ;
+    position: absolute;
+    top: 60px;
+    left: 25px;
+    display: block;
+    width: 22px;
+    height: 22px;
+}
+
+.rawShrimp {
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius:60% / 30% 40% 10% 70%;
+    background-image:
+    radial-gradient(
+        circle at center right,
+        transparent 67%,
+        #e45f17 68%,
+        #ee8b56 74%,
+        #ee8b56 85%,
+        rgba(33,33,33,.2) 86%,
+        transparent 90%
+    );
+    position: relative;
+    top: -35px;
+    left: -10px;
+    display: block;
+    width: 86px;
+    height: 70px;
+    z-index: 1;
+
+    transform: translate(200px,-100px);
+}
+.rawShrimp:before {
+    transform:rotate(24deg);
+    border-radius:85% 85% 50% 50% / 120% 120% 50% 50%;
+    box-shadow:
+        1px -35px 0 -7px #ee8b56,
+        0 -36px 1px -7px rgba(33,33,33,.2),
+        5px -23px 0 -8px #ee8b56,
+        5px -23px 1px -7px rgba(33,33,33,.2),
+        0 -2px 0 0 rgba(222,222,222,.3) inset,
+        -2px 1px 2px rgba(33,33,33,.2)
+        ;
+    position: absolute;
+    top: -24px;
+    left: 15px;
+    display: block;
+    width: 18px;
+    height: 45px;
+    background: #ee8b56;
+}
+.rawShrimp:after {
+    border-radius:50%;
+    background-image:
+    radial-gradient(
+        circle at top center,
+        #ee8b56 35%,
+        transparent 36%
+    ),
+    radial-gradient(
+        circle at center left,
+        #ee8b56 27%,
+        #ee7c3f 37%,
+        transparent 38%
+    )
+    ;
+    box-shadow:
+        -13px -86px 0 -9px rgba(222,222,222,.5),
+        -14px -85px 0 -7px rgb(33,33,33)
+    ;
+    position: absolute;
+    top: 60px;
+    left: 25px;
+    display: block;
+    width: 22px;
+    height: 22px;
+}
+
+.mushroom {
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    position:relative;
+    
+    transform: translate(300px,-200px);
+}
+.mushroom:after {
+    width: 100px;
+    height: 60px;
+    background-color: #e63946;
+    border-radius: 50% 50% 0 0;
+    display:block;
+    top: 5px;
+    left: 20px;
+    width: 60px;
+    height: 30px;
+    position:absolute;
+    top: 0;
+}
+
+.mushroom:before {
+    width: 30px;
+    height: 65px;
+    background-color: #c3c9c1;
+    border-radius: 15px;
+    position: absolute;
+    top: 10px;
+    left: 35px;
+}

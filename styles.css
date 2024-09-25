@@ -1,60 +1,51 @@
-
-:before,
-:after {
-  content: '';
-}
-h1{
-    color: red;
-    text-align: center;
-}
-
-h2{
-    color: blue;
-    text-align: center;
-}
-
-.meat {
-    display:grid;
-    place-items: center;
-    height: 100vh;
-    margin: 0;
-
-    border-radius: 50% / 30% 70% 25% 50%;
+.corn {
+    border-radius: 9px;
     box-shadow:
-    0 0 0 6px rgba(255,255,255,.3) inset,
-    0 0 6px rgba(33,33,33,.3);
-    position: relative;
-    top: 70px;
-    left: 40px;
-    width: 80px;
-    height: 80px;
-    
-    /* shifting position of the meat */
-    transform: translate(700px,100px); 
-    background: #B45227;
+        4px -2px 4px rgba(99,33,99,.3) inset,
+        -10px -2px 10px rgba(99,33,99,.5) inset,
+        0 0 5px rgba(33,33,33,.3);
+    position: absolute;
+    top: 60px;
+    left: 50px;
+    width: 35px;
+    height: 100px;
+    background: #F2D204;
     z-index: 1;
 }
-.meat:before,
-.meat:after {
-    border-radius: 45%;
-    box-shadow:
-    15px 0 0 0 rgba(33,33,33,.2),
-    30px 0 0 0 rgba(33,33,33,.2);
-    position: absolute;
+
+.corn:before {
+    content: '';
+    box-shadow: -1px 2px 2px 0 rgba(33,33,33,.5) inset;
+    position: relative;
+    top: 100%;
     display: block;
-    width: 4px;
-    height: 60%;
-    background: rgba(33,33,33,.2);
-    }
-    
-.meat:before {
-    transform: rotate(30deg);
-    top: 9px;
-    left: 24px;
-    }
-    
-.meat:after {
-    transform: rotate(-60deg);
-    top: 30px;
-    left: 30px;
-    }
+    margin: 0 auto;
+    width: 5px;
+    height: 30px;
+    background: #F2E6CA;
+}
+
+.corn:after {
+    content: '';
+    border-radius: 2px;
+    opacity: 0.2;
+    box-shadow:
+        1px 1px 0 rgba(33,33,33,.3),
+        2px 0 0 #F2D204,
+        3px 1px 0 rgba(33,33,33,.5),
+        4px 0 0 #F2D204,
+        5px 1px 0 rgba(33,33,33,.5),
+        6px 0 0 #F2E6CA,
+        7px 1px 0 rgba(33,33,33,.2),
+        
+        0 2px 0 #F2E6CA,
+        1px 3px 0 rgba(33,33,33,.3),
+        2px 2px 0 #F2E6CA,
+        3px 3px 0 rgba(33,33,33,.5);
+    position: absolute;
+    top: 2px;
+    left: 0;
+    display: block;
+    width: 22%;
+    height: 6%;
+}

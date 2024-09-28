@@ -1,5 +1,350 @@
-h1{
-    color: red;
-    font-family: "Times New Roman", Times, serif;
-
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
 }
+
+.fixed-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #333;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fixed-background h1 {
+  color: white;
+  font-size: 3em;
+  text-align: center;
+}
+
+.scroll-container {
+  position: relative;
+
+  z-index: 5;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 20px;
+  max-width: 100%;
+  height:auto;
+  margin: 0 auto;
+  margin-top: 100vh; /* Start after the full height of the viewport */
+}
+
+.scroll-content {
+  padding: 20px;
+}
+
+h2 {
+  color: #333;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.scroll-reveal > * {
+  max-width: 50rem;
+  text-align: center;
+}
+
+.scroll-reveal span {
+  color: rgba(223, 51, 51, 0);
+  background-image: linear-gradient(to right, #000000, #000000);
+  background-clip: text;
+-webkit-background-clip: text;
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  animation: scroll-reveal forwards;
+  animation-timeline: view();
+}
+
+.scroll-reveal h2 span {
+  animation-range-start: entry 30vh;
+  animation-range-end: contain 60vh;
+}
+
+.scroll-reveal p span {
+  animation-range-start: entry 30vh;
+  animation-range-end: contain 50vh;
+}
+
+@keyframes scroll-reveal {
+  to {
+    background-size: 100% 100%;
+  }
+}
+
+
+img{
+  max-width: 20%;
+}
+
+
+.food-container {
+    height: 100vh;
+    background-color: #4fe818;
+    position: relative;
+}
+
+  /* Sticky Section that overlays graphics */
+  .meat-container {
+    background-color: #ff6a88;
+    position: relative;
+    animation:
+        moveDown linear;
+        animation-timeline: scroll(nearest y);
+        animation-range-start: entry 40vh;
+  }
+
+  .meat-image {
+    display: grid; /* make the container a grid container */
+    grid-template-columns: repeat(3, 1fr); /* create three grid columns */
+    grid-template-rows: repeat(2, 1fr); /* create three grid rows */
+  }
+  
+  .meat-image img {
+    grid-column: 1; /* place the first image in the first column */
+    grid-row: 1; /* place the first image in the first row */
+  }
+  
+  .meat-image img.second-image {
+    grid-column: 2; /* place the second image in the second column */
+    grid-row: 1; /* place the second image in the second row */
+  }
+  
+  .meat-image img.third-image {
+    grid-column: 3; /* place the third image in the third column */
+    grid-row: 1; /* place the third image in the third row */
+  }
+
+  .meat-image img.fourth-image {
+    grid-column: 1; /* place the fourth image in the fourth column */
+    grid-row: 2; /* place the fourth image in the fourth row */
+  }
+
+  .meat-image img.fifth-image {
+    grid-column: 2; /* place the fifth image in the fifth column */
+    grid-row: 2; /* place the fifth image in the fifth row */
+  }
+
+  .meat-image img.sixth-image {
+    grid-column: 3; /* place the sixth image in the sixth column */
+    grid-row: 2; /* place the sixth image in the sixth row */
+  }
+
+  .meat-text{
+    left: 0;
+    bottom: 30%;
+    width: 100%;
+    
+    display: grid; /* make the container a grid container */
+    grid-template-columns: repeat(3, 1fr); /* create three grid columns */
+    grid-template-rows: repeat(2, 1fr); /* create three grid rows */
+
+    position: absolute;
+  }
+
+  .meat-text h2.first-text{
+    grid-column: 1; /* place the first image in the first column */
+    grid-row: 1; /* place the first image in the first row */
+  }
+
+  .meat-text h2.second-text{
+    grid-column: 2; /* place the first image in the first column */
+    grid-row: 1; /* place the first image in the first row */
+  }
+
+  .meat-text h2.third-text{
+    grid-column: 3; /* place the first image in the first column */
+    grid-row: 1; /* place the first image in the first row */
+  }
+
+  .meat-text h2.fourth-text{
+    grid-column: 1; /* place the first image in the first column */
+    grid-row: 2; /* place the first image in the first row */
+  }
+
+  .meat-text h2.fifth-text{
+    grid-column: 2; /* place the first image in the first column */
+    grid-row: 2; /* place the first image in the first row */
+  }
+
+  .meat-text h2.sixth-text{
+    grid-column: 3; /* place the first image in the first column */
+    grid-row: 2; /* place the first image in the first row */
+  }
+  
+
+  /* Vegetable Section */
+
+  .another-container{
+    height: 200vh;
+    background-color: #1e241b;
+    position: relative;
+  }
+
+  .vegetable-container {
+    background-color: #ff6a88;
+    position: relative;
+
+  }
+
+  .vegetable-image {
+    display: grid; /* make the container a grid container */
+    grid-template-columns: repeat(3, 1fr); /* create three grid columns */
+    grid-template-rows: repeat(2, 1fr); /* create three grid rows */
+
+    animation:
+    
+    move linear;
+    animation-timeline: scroll(nearest y);
+    animation-range-start: entry 160vh;
+  }
+
+
+  .vegetable-image img {
+    grid-column: 1; /* place the first image in the first column */
+    grid-row: 1; /* place the first image in the first row */
+  }
+  
+  .vegetable-image img.second-image {
+    grid-column: 2; /* place the second image in the second column */
+    grid-row: 1; /* place the second image in the second row */
+  }
+  
+  .vegetable-image img.third-image {
+    grid-column: 3; /* place the third image in the third column */
+    grid-row: 1; /* place the third image in the third row */
+  }
+
+  .vegetable-image img.fourth-image {
+    grid-column: 1; /* place the fourth image in the fourth column */
+    grid-row: 2; /* place the fourth image in the fourth row */
+  }
+
+  .vegetable-image img.fifth-image {
+    grid-column: 2; /* place the fifth image in the fifth column */
+    grid-row: 2; /* place the fifth image in the fifth row */
+  }
+
+  .vegetable-image img.sixth-image {
+    grid-column: 3; /* place the sixth image in the sixth column */
+    grid-row: 2; /* place the sixth image in the sixth row */
+  }
+  
+  /* Side Dishes */
+
+  #side {
+    /* Stretch it out, so that we create room for the horizontal scroll animation */
+    height: 200vh;
+    overflow: visible; /* To make position sticky work … */
+    
+    view-timeline-name: --section-pin-tl;
+    view-timeline-axis: block;
+  }
+
+  .side-dishes-container {
+    /* Stick to Top */
+    height: 100vh;
+    width: 200vw;
+    position: sticky;
+    top: 0;
+  
+    display: flex;
+  }
+
+  .spacer{
+    height: 100vh;
+    width: 100vw;
+    background-color: #1e241b;
+  }
+
+  .side-dishes {
+    margin: 6rem;
+    height: 100vh;
+    display: grid; /* make the container a grid container */
+    grid-template-columns: repeat(4, 1fr); /* create three grid columns */
+    grid-template-rows: repeat(2, 1fr); /* create three grid rows */
+  
+    /* Hook animation */
+    will-change: transform;
+    animation: linear horizontal forwards;
+  
+    /* Link animation to view-timeline */
+    animation-timeline: --section-pin-tl;
+    animation-range: contain 0% contain 100%;
+  }
+  
+  
+  .side-dishes img {
+    grid-column: 1; /* place the first image in the first column */
+    grid-row: 1; /* place the first image in the first row */
+  }
+  
+  .side-dishes img.second-image {
+    grid-column: 3; /* place the second image in the second column */
+    grid-row: 1; /* place the second image in the second row */
+  }
+  
+  .side-dishes img.third-image {
+    grid-column: 2; /* place the third image in the third column */
+    grid-row: 2; /* place the third image in the third row */
+  }
+
+  .side-dishes img.fourth-image {
+    grid-column: 4; /* place the fourth image in the fourth column */
+    grid-row: 2; /* place the fourth image in the fourth row */
+  }
+
+  .test{
+    height: 100vh;
+    background-color: #ff6a88;
+  }
+
+/* Create the scroll-driven animation */
+@keyframes moveDown {
+    0% {
+        transform: translateY(0px);  /* Starting position */
+    }
+    100% {
+        transform: translateY(80vh);  /* End position after scrolling */
+    }
+}
+
+@keyframes move{
+    0% {
+        transform: translateY(0px);
+        transform: translateX(0px);  /* Starting position */
+    }
+    50%{
+      transform: translateX(0px);  /* Starting position */
+      transform: translateY(80vh);  /* End position after scrolling */
+    }
+
+    100% {
+        transform: translateX(100vw);  /* End position after scrolling */
+
+    }
+}
+
+@keyframes horizontal {
+	to {
+		/* Move horizontally so that right edge is aligned against the viewport */
+		transform: translateX(calc(-17.5% - 100vw));
+	}
+}
+
+.static-content {
+    padding-top: 150px;
+    text-align: center;
+}
+
+
+

@@ -1,51 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Korean BBQ Menu</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-attachment: fixed;
+        }
+
+        .menu-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 600px;
+            max-width: 100%;
+            height: 80vh; /* Set a fixed height */
+            overflow-y: auto; /* Enable vertical scrolling */
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .menu-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .restaurant-name {
+            text-align: center;
+            font-size: 2.5em;
+            color: #ff6347;
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            animation: fadeIn 1s ease; /* Fade in animation */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .menu-section {
+            margin-bottom: 30px;
+        }
+
+        .menu-section h2 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #ff6347;
+            text-transform: uppercase;
+            animation: slideIn 0.5s ease; /* Slide in animation */
+            animation-delay: 0.5s; /* Delay for section titles */
+            opacity: 0; /* Start hidden */
+            animation-fill-mode: forwards; /* Keep final state */
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .menu-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        li {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #fafafa;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            animation: bounceIn 0.5s ease; /* Bounce in animation */
+            opacity: 0; /* Start hidden */
+            animation-fill-mode: forwards; /* Keep final state */
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        li:hover {
+            transform: translateY(-5px);
+            background-color: #ff6347;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .dish-name {
+            font-weight: bold;
+            color: #444;
+            font-size: 1.2em;
+            margin-top: 10px;
+            text-align: center;
+            animation: pulse 1s infinite alternate; /* Pulsing animation */
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.05);
+            }
+        }
+
+        .price {
+            color: #666;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        li:hover .price, li:hover .dish-name {
+            color: #fff;
+            animation: shake 0.5s; /* Shake animation on hover */
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-5px);
+            }
+            50% {
+                transform: translateX(5px);
+            }
+            75% {
+                transform: translateX(-5px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        li img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, filter 0.3s ease; /* Image zoom on hover */
+            animation: fadeInImage 0.5s ease; /* Fade in image */
+        }
+
+        @keyframes fadeInImage {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        li:hover img {
+            transform: scale(1.1); /* Zoom effect on hover */
+            filter: brightness(1.2); /* Brighten effect on hover */
+        }
+
+        @media (max-width: 768px) {
+            .menu-list {
+                grid-template-columns: 1fr;
+            }
+            
+            li img {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .dish-name, .price {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-container {
+                width: 90%;
+            }
+            
+            .restaurant-name {
+                font-size: 2em;
+            }
+            
+            .menu-section h2 {
+                font-size: 1.5em;
+            }
+            
+            .dish-name, .price {
+                font-size: 1em;
+            }
+        }
+    </style>
+    <title>Korean BBQ Menu</title>
+</head>
 <body>
     <div class="menu-container">
-        <h1 class="restaurant-name">Seoul BBQ Delight</h1>
-
+        <h1 class="restaurant-name">Korean BBQ Delight</h1>
+        
         <div class="menu-section">
             <h2>Meat Options</h2>
-            <ul>
-                <li><span class="dish-name">Prime Kalbi</span><span class="price">$20.99</span></li>
-                <li><span class="dish-name">Beef Brisket</span><span class="price">$18.99</span></li>
-                <li><span class="dish-name">Lamb Chops</span><span class="price">$21.99</span></li>
-                <li><span class="dish-name">Marinated Chicken</span><span class="price">$17.99</span></li>
+            <ul class="menu-list">
+                <li>
+                    <img src="https://via.placeholder.com/100" alt="Prime Kalbi">
+                    <span class="dish-name">Prime Kalbi</span>
+                    <span class="price">$25</span>
+                </li>
+                <li>
+                    <img src="https://via.placeholder.com/100" alt="Beef">
+                    <span class="dish-name">Beef</span>
+                    <span class="price">$20</span>
+                </li>
+                <li>
+                    <img src="https://via.placeholder.com/100" alt="Lamb">
+                    <span class="dish-name">Lamb</span>
+                    <span class="price">$30</span>
+                </li>
+                <li>
+                    <img src="https://via.placeholder.com/100" alt="Chicken">
+                    <span class="dish-name">Chicken</span>
+                    <span class="price">$15</span>
+                </li>
             </ul>
         </div>
 
         <div class="menu-section">
             <h2>Veggie Options</h2>
-            <ul>
-                <li><span class="dish-name">Grilled Mushrooms</span><span class="price">$6.99</span></li>
-                <li><span class="dish-name">Fresh Lettuce Wraps</span><span class="price">$3.99</span></li>
-                <li><span class="dish-name">Grilled Onions</span><span class="price">$5.99</span></li>
-                <li><span class="dish-name">Corn on the Cob</span><span class="price">$4.99</span></li>
+            <ul class="menu-list">
+                <li>
+                    <img src="https://via.placeholder.com/100" alt="Mushrooms">
+                    <span class="dish-name">Mushrooms</span>
+                    <span class="price">$10</span>
+                </li>
+                <li>
+                    <img src="https://via.placeholder.com/100" alt="Lettuce">
+                    <span class="dish-name">Lettuce</span>
+                    <span class="price">$5</span>
+                </li>
+                <li>
+                    <img src="https://via.placeholder.com/100" alt="Onions">
+                    <span class="dish-name">Onions</span>
+                    <span class="price">$3</span>
+                </li>
+                <li>
+                    <img src="https://via.placeholder.com/100" alt="Corn">
+                    <span class="dish-name">Corn</span>
+                    <span class="price">$4</span>
+                </li>
             </ul>
         </div>
 
         <div class="menu-section">
             <h2>Side Dishes</h2>
-            <ul>
-                <li><span class="dish-name">Kimchi</span><span class="price">$2.99</span></li>
-                <li><span class="dish-name">Bean Sprouts</span><span class="price">$2.99</span></li>
-                <li><span class="dish-name">Sweet Potatoes</span><span class="price">$3.99</span></li>
+            <ul class="menu-list">
+                <li>
+                    <img src="https://via.placeholder.com/100" alt="Kimchi">
+                    <span class="dish-name">Kimchi</span>
+                    <span class="price">$6</span>
+                </li>
+                <li>
+                    <img src="https://via.placeholder.com/100" alt="Bean Sprouts">
+                    <span class="dish-name">Bean Sprouts</span>
+                    <span class="price">$4</span>
+                </li>
+                <li>
+                    <img src="https://via.placeholder.com/100" alt="Sweet Potatoes">
+                    <span class="dish-name">Sweet Potatoes</span>
+                    <span class="price">$5</span>
+                </li>
             </ul>
         </div>
 
         <div class="menu-section">
             <h2>Main Dishes</h2>
-            <ul>
-                <li><span class="dish-name">Bibimbap</span><span class="price">$12.99</span></li>
-                <li><span class="dish-name">Tteokbokki</span><span class="price">$10.99</span></li>
-                <li><span class="dish-name">Kimchi Pancake</span><span class="price">$11.99</span></li>
+            <ul class="menu-list">
+                <li>
+                    <img src="https://via.placeholder.com/100" alt="Bibimbap">
+                    <span class="dish-name">Bibimbap</span>
+                    <span class="price">$12</span>
+                </li>
+                <li>
+                    <img src="https://via.placeholder.com/100" alt="Tteokbokki">
+                    <span class="dish-name">Tteokbokki</span>
+                    <span class="price">$10</span>
+                </li>
+                <li>
+                    <img src="https://via.placeholder.com/100" alt="Kimchi Pancake">
+                    <span class="dish-name">Kimchi Pancake</span>
+                    <span class="price">$8</span>
+                </li>
             </ul>
         </div>
     </div>

@@ -1,5 +1,5 @@
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
   margin: 0;
   padding: 20px;
@@ -12,13 +12,14 @@ body {
 
 .menu-container {
   background-color: #fff;
-  padding: 40px;
+  padding: 20px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  width: 500px;
+  width: 600px;
   max-width: 100%;
+  height: 80vh; /* Set a fixed height */
+  overflow-y: auto; /* Enable vertical scrolling */
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-  font-family: 'Noto Sans KR', sans-serif; /* Korean-themed font */
 }
 
 .menu-container:hover {
@@ -29,11 +30,21 @@ body {
 .restaurant-name {
   text-align: center;
   font-size: 2.5em;
-  color: #ff6347; /* Warm red tone */
-  margin-bottom: 30px;
+  color: #ff6347;
+  margin-bottom: 20px;
   font-family: 'Georgia', serif;
   letter-spacing: 3px;
   text-transform: uppercase;
+  animation: fadeIn 1s ease; /* Fade in animation */
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
 }
 
 .menu-section {
@@ -46,51 +57,153 @@ body {
   margin-bottom: 15px;
   border-bottom: 3px solid #ff6347;
   text-transform: uppercase;
+  animation: slideIn 0.5s ease; /* Slide in animation */
+  animation-delay: 0.5s; /* Delay for section titles */
+  opacity: 0; /* Start hidden */
+  animation-fill-mode: forwards; /* Keep final state */
 }
 
-ul {
+@keyframes slideIn {
+  0% {
+      transform: translateY(-20px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+.menu-list {
   list-style: none;
   padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
 li {
   display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid #f0f0f0;
-  position: relative;
-  transition: background-color 0.3s ease;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #fafafa;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  animation: bounceIn 0.5s ease; /* Bounce in animation */
+  opacity: 0; /* Start hidden */
+  animation-fill-mode: forwards; /* Keep final state */
+}
+
+@keyframes bounceIn {
+  0% {
+      transform: scale(0.5);
+      opacity: 0;
+  }
+  50% {
+      transform: scale(1.1);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(1);
+  }
 }
 
 li:hover {
+  transform: translateY(-5px);
   background-color: #ff6347;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .dish-name {
   font-weight: bold;
   color: #444;
   font-size: 1.2em;
+  margin-top: 10px;
+  text-align: center;
+  animation: pulse 1s infinite alternate; /* Pulsing animation */
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+  }
+  100% {
+      transform: scale(1.05);
+  }
 }
 
 .price {
   color: #666;
   font-size: 1.2em;
   font-weight: bold;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  margin-top: 5px;
 }
 
-li:hover .price {
+li:hover .price, li:hover .dish-name {
   color: #fff;
+  animation: shake 0.5s; /* Shake animation on hover */
 }
 
-li::before {
-  content: "•";
-  color: #ff6347;
-  position: absolute;
-  left: -20px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.5em;
+@keyframes shake {
+  0% {
+      transform: translateX(0);
+  }
+  25% {
+      transform: translateX(-5px);
+  }
+  50% {
+      transform: translateX(5px);
+  }
+  75% {
+      transform: translateX(-5px);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+li img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, filter 0.3s ease; /* Image zoom on hover */
+  animation: fadeInImage 0.5s ease; /* Fade in image */
+}
+
+@keyframes fadeInImage {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+li:hover img {
+  transform: scale(1.1); /* Zoom effect on hover */
+  filter: brightness(1.2); /* Brighten effect on hover */
+}
+
+@media (max-width: 768px) {
+  .menu-list {
+      grid-template-columns: 1fr;
+  }
+  
+  li img {
+      width: 80px;
+      height: 80px;
+  }
+  
+  .dish-name, .price {
+      font-size: 1em;
+  }
 }
 
 @media (max-width: 480px) {
@@ -107,6 +220,6 @@ li::before {
   }
   
   .dish-name, .price {
-      font-size: 1.1em;
+      font-size: 1em;
   }
 }

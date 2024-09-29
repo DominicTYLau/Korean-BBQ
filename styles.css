@@ -31,95 +31,8 @@ h2{
 }
 
 /* meat */
-.meat {
-    display:grid;
-    place-items: center;
-    height: 100vh;
-    margin: 0;
-
-    border-radius: 50% / 30% 70% 25% 50%;
-    box-shadow:
-    0 0 0 6px rgba(255,255,255,.3) inset,
-    0 0 6px rgba(33,33,33,.3);
-    position: absolute;
-    top: 70px;
-    left: 40px;
-    width: 80px;
-    height: 80px;
-
-    /* shifting position of the meat */
-    transform: translate(700px,100px); 
-    background: #B45227;
-    z-index: 1;
-}
-.meat:before,
-.meat:after {
-    border-radius: 45%;
-    box-shadow:
-    15px 0 0 0 rgba(33,33,33,.2),
-    30px 0 0 0 rgba(33,33,33,.2);
-    position: absolute;
-    display: block;
-    width: 4px;
-    height: 60%;
-    background: rgba(33,33,33,.2);
-    }
-    
-.meat:before {
-    transform: rotate(30deg);
-    top: 9px;
-    left: 24px;
-    }
-    
-.meat:after {
-    transform: rotate(-60deg);
-    top: 30px;
-    left: 30px;
-    }
-
-.burntMeat {
-    display:grid;
-    place-items: center;
-    height: 100vh;
-    margin: 0;
-
-    border-radius: 50% / 30% 70% 25% 50%;
-    width: 75px;
-    height: 80px;
-    background: #3b231c;
-    box-shadow: 0 0 0 6px rgba(0,0,0,.6) inset,
-                0 0 15px rgba(0,0,0,.5);
-    position: absolute;
-    z-index: 1;
-
-    transform: translate(500px, 100px);
-}
-.burntMeat:before,
-.burntMeat:after {
-    content:'';
-    border-radius: 50%;
-    box-shadow: 10px 0 0 0 rgba(0,0,0,.6),
-                20px 0 0 0 rgba(0,0,0,.6);
-    position: absolute;
-    display: block;
-    width: 6px;
-    height: 60%;
-    background: rgba(0,0,0, 0.6); /* burn marks */
-}
-
-.burntMeat:before {
-    transform: rotate(30deg);
-    top: 15px;
-    left: 30px;
-}
-
-.burntMeat:after {
-    transform: rotate(-30deg);
-    top: 27px;
-    left: 25px;
-}
-
-.rawMeat{
+.meat{ /*raw meat */
+    transition: all 1.5s ease;
     display:grid;
     place-items: center;
     height: 100vh;
@@ -136,11 +49,11 @@ h2{
     position: absolute;
     z-index: 1;
 
-    transform: translate(600px, 100px);
+    transform: translate(700px,100px);
 }
 
-.rawMeat:before,
-.rawMeat:after {
+.meat:before,
+.meat:after {
     content: '';
     position: absolute;
     display: block;
@@ -151,7 +64,7 @@ h2{
     opacity: 0.5;
 }
 
-.rawMeat:before {
+.meat:before {
     transform: rotate(30deg);
     background: radial-gradient(circle at 20% 50%,
                                 rgba(255,255,255,0.8) 5%,
@@ -161,7 +74,7 @@ h2{
                                 transparent 35%);
 }
 
-.rawMeat:after {
+.meat:after {
     transform: rotate(-30deg);
     background: radial-gradient(circle at 70% 60%,
                                 rgba(255,255,255,0.7) 5%,
@@ -170,51 +83,96 @@ h2{
                                 rgba(255,255,255,0.5) 10%,
                                 transparent 50%);
 }
+.meat:hover { /* cooked meat */
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius: 50% / 30% 70% 25% 50%;
+    box-shadow:
+    0 0 0 6px rgba(255,255,255,.3) inset,
+    0 0 6px rgba(33,33,33,.3);
+    position: absolute;
+    width: 80px;
+    height: 80px;
+
+    /* shifting position of the meat */
+    transform: translate(700px,100px); 
+    background: #B45227;
+    z-index: 1;
+}
+.meat:hover:before,
+.meat:hover:after {
+    border-radius: 45%;
+    box-shadow:
+    15px 0 0 0 rgba(33,33,33,.2),
+    30px 0 0 0 rgba(33,33,33,.2);
+    position: absolute;
+    display: block;
+    width: 4px;
+    height: 60%;
+    background: rgba(33,33,33,.2);
+    }
+    
+.meat:hover:before {
+    transform: rotate(30deg);
+    top: 9px;
+    left: 24px;
+    }
+    
+.meat:hover:after {
+    transform: rotate(-60deg);
+    top: 30px;
+    left: 30px;
+    }
+
+.meat:active { /*burnt meat */
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius: 50% / 30% 70% 25% 50%;
+    width: 75px;
+    height: 80px;
+    background: #3b231c;
+    box-shadow: 0 0 0 6px rgba(0,0,0,.6) inset,
+                0 0 15px rgba(0,0,0,.5);
+    position: absolute;
+    z-index: 1;
+
+    transform: translate(700px,100px);
+}
+.meat:active:before,
+.meat:active:after {
+    content:'';
+    border-radius: 50%;
+    box-shadow: 10px 0 0 0 rgba(0,0,0,.6),
+                20px 0 0 0 rgba(0,0,0,.6);
+    position: absolute;
+    display: block;
+    width: 6px;
+    height: 60%;
+    background: rgba(0,0,0, 0.6); /* burn marks */
+}
+
+.meat:active:before {
+    transform: rotate(30deg);
+    top: 15px;
+    left: 30px;
+}
+
+.meat:active:after {
+    transform: rotate(-30deg);
+    top: 27px;
+    left: 25px;
+}
+
 
 /* sausage */
-.sausage {
-    display:grid;
-    place-items: center;
-    height: 100vh;
-    margin: 0;
-
-    border-radius:10px;
-    box-shadow:
-        -6px 0 8px 0 rgba(92,0,0,.8) inset,
-        2px 0 2px 0 rgba(33,33,33,.5),
-        0 0 5px rgba(33,33,33,.5)
-    ;
-    position: absolute;
-    top: 70px;
-    left: 450px;
-    width: 25px;
-    height: 100px;
-    background: rgb(136, 1, 1);
-    z-index: 1;
-}
-
-.burntSausage {
-    display:grid;
-    place-items: center;
-    height: 100vh;
-    margin: 0;
-
-    border-radius:10px;
-    box-shadow:
-        -6px 0 8px 0 rgba(92,0,0,.8) inset,
-        2px 0 2px 0 rgba(33,33,33,.6),
-        0 0 5px rgba(33,33,33,.6)
-    ;
-    position: absolute;
-    top: 70px;
-    left: 400px;
-    width: 25px;
-    height: 100px;
-    background: rgb(36, 1, 1);
-    z-index: 1;
-}
-
-.rawSausage {
+.sausage { /* raw */
+    transition: all 1.5s ease;
     display:grid;
     place-items: center;
     height: 100vh;
@@ -234,9 +192,122 @@ h2{
     background: rgb(245, 86, 86);
     z-index: 1;
 }
+.sausage:hover { /* cooked */
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius:10px;
+    box-shadow:
+        -6px 0 8px 0 rgba(92,0,0,.8) inset,
+        2px 0 2px 0 rgba(33,33,33,.5),
+        0 0 5px rgba(33,33,33,.5)
+    ;
+    position: absolute;
+    top: 30px;
+    left: 550px;
+    width: 25px;
+    height: 100px;
+    background: rgb(136, 1, 1);
+    z-index: 1;
+}
+.sausage:active { /* burnt */
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius:10px;
+    box-shadow:
+        -6px 0 8px 0 rgba(92,0,0,.8) inset,
+        2px 0 2px 0 rgba(33,33,33,.6),
+        0 0 5px rgba(33,33,33,.6)
+    ;
+    position: absolute;
+    top: 30px;
+    left: 550px;
+    width: 25px;
+    height: 100px;
+    background: rgb(36, 1, 1);
+    z-index: 1;
+}
 
 /* Shrimp */
+
 .shrimp {
+    transition: all 1.5s ease;
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius:60% / 30% 40% 10% 70%;
+    background-image:
+    radial-gradient(
+        circle at center right,
+        transparent 67%,
+        #e45f17 68%,
+        #ee8b56 74%,
+        #ee8b56 85%,
+        rgba(33,33,33,.2) 86%,
+        transparent 90%
+    );
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    display: block;
+    width: 86px;
+    height: 70px;
+    z-index: 1;
+
+}
+.shrimp:before {
+    transform:rotate(24deg);
+    border-radius:85% 85% 50% 50% / 120% 120% 50% 50%;
+    box-shadow:
+        1px -35px 0 -7px #ee8b56,
+        0 -36px 1px -7px rgba(33,33,33,.2),
+        5px -23px 0 -8px #ee8b56,
+        5px -23px 1px -7px rgba(33,33,33,.2),
+        0 -2px 0 0 rgba(222,222,222,.3) inset,
+        -2px 1px 2px rgba(33,33,33,.2)
+        ;
+    position: absolute;
+    top: -24px;
+    left: 15px;
+    display: block;
+    width: 18px;
+    height: 45px;
+    background: #ee8b56;
+}
+.shrimp:after {
+    border-radius:50%;
+    background-image:
+    radial-gradient(
+        circle at top center,
+        #ee8b56 35%,
+        transparent 36%
+    ),
+    radial-gradient(
+        circle at center left,
+        #ee8b56 27%,
+        #ee7c3f 37%,
+        transparent 38%
+    )
+    ;
+    box-shadow:
+        -13px -86px 0 -9px rgba(222,222,222,.5),
+        -14px -85px 0 -7px rgb(33,33,33)
+    ;
+    position: absolute;
+    top: 60px;
+    left: 25px;
+    display: block;
+    width: 22px;
+    height: 22px;
+}
+.shrimp:hover {
     display:grid;
     place-items: center;
     height: 100vh;
@@ -254,16 +325,15 @@ h2{
         transparent 90%
     );
     position: absolute;
-    top: -35px;
-    left: -10px;
+    top: 50px;
+    left: 10px;
     display: block;
     width: 86px;
     height: 70px;
     z-index: 1;
 
-    transform: translate(200px,90px);
 }
-.shrimp:before {
+.shrimp:hover:before {
     transform:rotate(24deg);
     border-radius:85% 85% 50% 50% / 120% 120% 50% 50%;
     box-shadow:
@@ -282,7 +352,7 @@ h2{
     height: 45px;
     background: #EF6921;
 }
-.shrimp:after {
+.shrimp:hover:after {
     border-radius:50%;
     background-image:
     radial-gradient(
@@ -308,8 +378,7 @@ h2{
     width: 22px;
     height: 22px;
 }
-
-.burntShrimp {
+.shrimp:active {
     display:grid;
     place-items: center;
     height: 100vh;
@@ -327,16 +396,14 @@ h2{
         transparent 90%
     );
     position: absolute;
-    top: -35px;
-    left: -10px;
+    top: 50px;
+    left: 10px;
     display: block;
     width: 86px;
     height: 70px;
     z-index: 1;
-
-    transform: translate(200px,100px);
 }
-.burntShrimp:before {
+.shrimp:active:before {
     transform:rotate(24deg);
     border-radius:85% 85% 50% 50% / 120% 120% 50% 50%;
     box-shadow:
@@ -355,7 +422,7 @@ h2{
     height: 45px;
     background: #572002;
 }
-.burntShrimp:after {
+.shrimp:active:after {
     border-radius:50%;
     background-image:
     radial-gradient(
@@ -382,80 +449,44 @@ h2{
     height: 22px;
 }
 
-.rawShrimp {
-    display:grid;
+.mushroom {
+    transition: all 1.5s ease;
+    display: grid;
     place-items: center;
     height: 100vh;
     margin: 0;
 
-    border-radius:60% / 30% 40% 10% 70%;
-    background-image:
-    radial-gradient(
-        circle at center right,
-        transparent 67%,
-        #e45f17 68%,
-        #ee8b56 74%,
-        #ee8b56 85%,
-        rgba(33,33,33,.2) 86%,
-        transparent 90%
-    );
     position: absolute;
-    top: -35px;
+    width: 30px;
+    height: 65px;
+    background-color: #e0d5b9; /* Light beige for a raw mushroom stalk */
+    border-radius: 15px;
+
+    top: 10px;
+    left: 35px;
+
+    transform: translate(80px, 80px);
+}
+
+.mushroom:before, .mushroom:after {
+    transition: all 1.5s ease;
+    background-color: #b5824d; /* Lighter brown for the mushroom cap */
+    border-radius: 50% 50% 0 0; /* Smooth rounded cap */
+    display: block;
+    top: -20px; /* Move cap slightly higher to fit better */
+    width: 50px; /* Make the cap wider */
+    height: 35px; /* Adjust height for natural proportions */
+    position: absolute;
+}
+.mushroom:before {
     left: -10px;
-    display: block;
-    width: 86px;
-    height: 70px;
-    z-index: 1;
-
-    transform: translate(200px,100px);
-}
-.rawShrimp:before {
-    transform:rotate(24deg);
-    border-radius:85% 85% 50% 50% / 120% 120% 50% 50%;
-    box-shadow:
-        1px -35px 0 -7px #ee8b56,
-        0 -36px 1px -7px rgba(33,33,33,.2),
-        5px -23px 0 -8px #ee8b56,
-        5px -23px 1px -7px rgba(33,33,33,.2),
-        0 -2px 0 0 rgba(222,222,222,.3) inset,
-        -2px 1px 2px rgba(33,33,33,.2)
-        ;
-    position: absolute;
-    top: -24px;
-    left: 15px;
-    display: block;
-    width: 18px;
-    height: 45px;
-    background: #ee8b56;
-}
-.rawShrimp:after {
-    border-radius:50%;
-    background-image:
-    radial-gradient(
-        circle at top center,
-        #ee8b56 35%,
-        transparent 36%
-    ),
-    radial-gradient(
-        circle at center left,
-        #ee8b56 27%,
-        #ee7c3f 37%,
-        transparent 38%
-    )
-    ;
-    box-shadow:
-        -13px -86px 0 -9px rgba(222,222,222,.5),
-        -14px -85px 0 -7px rgb(33,33,33)
-    ;
-    position: absolute;
-    top: 60px;
-    left: 25px;
-    display: block;
-    width: 22px;
-    height: 22px;
 }
 
-.mushroom {
+.mushroom:after {
+    display: none; 
+}
+
+.mushroom:hover {
     display:grid;
     place-items: center;
     height: 100vh;
@@ -469,27 +500,26 @@ h2{
 
     top: 10px;
     left: 35px;
-    /* transform: translate(300px,-200px); */
 }
-.mushroom:before,.mushroom:after{
+.mushroom:hover:before,.mushroom:hover:after{
     background-color: #5a0e0e;
     border-radius: 80% 0 0 10%;
     display: block;
-    top: -10px;
+    top: -20px;
     right: 16px;
     width:35px;
-    height: 30px;
+    height: 35px;
     position: absolute;
 }
-.mushroom:before{
-    right:8px;
+.mushroom:hover:before{
+    right:3px;
 }
-.mushroom:after{
+.mushroom:hover:after{
     transform: scaleX(-1);
-    left: 8px;
+    left: 7px;
 }
 
-.mushroomShape{ /* curved shape inside of the mushroom */
+.mushroom:active {
     display:grid;
     place-items: center;
     height: 100vh;
@@ -497,38 +527,6 @@ h2{
 
     position: absolute;
 
-}
-.mushroomShape:before,.mushroomShape:after{
-    background-color: #c3c9c1;
-    border-radius: 65% 0 0 10%;
-    right: 16px;
-    
-    width: 15px;
-    height: 10px;
-    display:block;
-    position:absolute;
-}
-.mushroomShape:before{
-    top: -106px;
-    left:30px;
-}
-.mushroomShape:after{
-    transform:scaleX(-1);
-    top: -106px;
-    left:40px;
-}
-
-.burntMushroom {
-    display:grid;
-    place-items: center;
-    height: 100vh;
-    margin: 0;
-
-    position: absolute;
-
-    transform: translate(300px, -800px);
-}
-.burntMushroom:before {
     width: 30px;
     height: 65px;
     background-color: #1b1a1a;
@@ -537,27 +535,49 @@ h2{
     top: 10px;
     left: 35px;
 }
-.burntMushroom:after {
+.mushroom:active:before, .mushroom:active:after{
+    background-color: #222222;
+    border-radius: 80% 0 0 10%;
+    display: block;
+    top: -20px;
+    right: 16px;
+    width:35px;
+    height: 35px;
+    position: absolute;
+}
+.mushroom:active:before{
+    right: 3px;
+}
+.mushroom:active:after{
+    transform: scaleX(-1);
+    left: 7px;
+}
+/* .mushroom:active:after {
     width: 100px;
     height: 60px;
     background-color: #222222;
     border-radius: 50% 50% 10% 10%;
     display: block;
-    top: 5px;
-    left: 20px;
+    top: -10px;
+    left: 30px;
     width: 60px;
     height: 30px;
     position: absolute;
     top: 0;
-}
+} */
 
+/* animations */
+@keyframes moveMeat{
+    0% {left: 0px; top: 0px;}
+    25% {left: 50px; top: 50px;}
+}
 @keyframes testAnimation{
     0% {background-color: red;left: 0px; top: 0px;}
     25% {background-color: yellow; left: 200px; top: 0px;}
     50% {background-color: blue; left: 0px; top: 200px;}
     100% {background-color: green; left:0px; top:0px;}
 }
-.testing{
+/* .testing{
     width: 100px;
     height: 60px;
     background-color: #fc0000;
@@ -568,7 +588,7 @@ h2{
     animation-duration: 4s;
     animation-iteration-count: 9;
 
-} 
+}  */
 /* .testing:before{
     transform:scaleX(-1);
 

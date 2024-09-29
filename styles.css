@@ -303,7 +303,7 @@ p {
 }
 
   /* Vegetable Section */
-
+  
   .another-container{
     height: 200vh;
     position: relative;
@@ -318,6 +318,8 @@ p {
     display: grid; /* make the container a grid container */
     grid-template-columns: repeat(5, 1fr); /* create three grid columns */
     grid-template-rows: repeat(2, 1fr); /* create three grid rows */
+    font-family: 'Gowun Batang', sans-serif; /* Use the same font for consistency */
+
 
     animation:
     
@@ -360,6 +362,8 @@ p {
     grid-row: 2; /* place the fifth image in the fifth row */
   }
   
+
+  
   /* Side Dishes */
 
   .side-dishes-container {
@@ -371,11 +375,13 @@ p {
 }
 
 .side-dishes {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    width: 80%;
+  font-family: 'Gowun Batang', sans-serif; /* Use the same font for consistency */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 80%;
 }
 
 .side-dish-item {
@@ -388,7 +394,23 @@ p {
   animation: fadeInUp 1s ease forwards;
 }
 
+.side-dish-item {
+  background-color: #ffffff; /* White background for items */
+  padding: 15px 20px; /* Padding inside items */
+  margin: 10px 0; /* Space between items */
+  border-left: 6px solid #ff6f61; /* Left border with a vibrant color */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  font-size: 1.1em; /* Slightly larger font for items */
+  color: #333; /* Dark text color */
+  border-radius: 6px; /* Rounded corners for items */
+}
 
+.side-dishes h2 {
+  text-align: center; /* Center the heading */
+  color: #ff6f61; /* Heading color */
+  font-size: 1.8em; /* Larger font size for heading */
+  margin-bottom: 15px; /* Space below heading */
+}
 /* Image styling */
 .side-dish-item img {
     width: 100px;
@@ -401,6 +423,22 @@ p {
     font-size: 1.5rem;
     color: #333;
     text-align: center;
+}
+
+/* Hover Effect */
+.side-dish-item:hover {
+  transform: translateY(-3px); /* Lift effect */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover */
+}
+
+/* Adding a Decorative Line Under the Heading */
+.side-dishes h2::after {
+  content: "";
+  display: block;
+  width: 50%; /* Length of the line */
+  height: 2px; /* Thickness of the line */
+  background: #c0c0c0; /* Color of the line */
+  margin: 10px auto; /* Center the line */
 }
 
 /* Fade-in and slide-up animation */

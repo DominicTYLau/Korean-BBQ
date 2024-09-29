@@ -49,7 +49,11 @@ h2{
     position: absolute;
     z-index: 1;
 
-    transform: translate(700px,100px);
+    top: 200px;
+    left: 670px;
+    animation-name: moveMeat;
+    animation-duration: 3s;
+    animation-timing-function: linear;
 }
 
 .meat:before,
@@ -97,10 +101,10 @@ h2{
     width: 80px;
     height: 80px;
 
-    /* shifting position of the meat */
-    transform: translate(700px,100px); 
     background: #B45227;
     z-index: 1;
+
+
 }
 .meat:hover:before,
 .meat:hover:after {
@@ -142,7 +146,6 @@ h2{
     position: absolute;
     z-index: 1;
 
-    transform: translate(700px,100px);
 }
 .meat:active:before,
 .meat:active:after {
@@ -185,12 +188,16 @@ h2{
         0 0 5px rgba(33,33,33,.5)
     ;
     position: absolute;
-    top: 30px;
-    left: 550px;
+    top: 190px;
+    left: 850px;
     width: 25px;
     height: 100px;
     background: rgb(245, 86, 86);
     z-index: 1;
+
+    animation-name: moveSausage;
+    animation-duration: 3s;
+    animation-timing-function: linear;
 }
 .sausage:hover { /* cooked */
     display:grid;
@@ -205,8 +212,6 @@ h2{
         0 0 5px rgba(33,33,33,.5)
     ;
     position: absolute;
-    top: 30px;
-    left: 550px;
     width: 25px;
     height: 100px;
     background: rgb(136, 1, 1);
@@ -225,8 +230,6 @@ h2{
         0 0 5px rgba(33,33,33,.6)
     ;
     position: absolute;
-    top: 30px;
-    left: 550px;
     width: 25px;
     height: 100px;
     background: rgb(36, 1, 1);
@@ -234,7 +237,6 @@ h2{
 }
 
 /* Shrimp */
-
 .shrimp {
     transition: all 1.5s ease;
     display:grid;
@@ -254,13 +256,16 @@ h2{
         transparent 90%
     );
     position: absolute;
-    top: 50px;
-    left: 10px;
+    top: 400px;
+    left: 670px;
     display: block;
     width: 86px;
     height: 70px;
     z-index: 1;
 
+    animation-name: moveShrimp;
+    animation-duration:3s;
+    animation-timing-function: linear;
 }
 .shrimp:before {
     transform:rotate(24deg);
@@ -325,8 +330,6 @@ h2{
         transparent 90%
     );
     position: absolute;
-    top: 50px;
-    left: 10px;
     display: block;
     width: 86px;
     height: 70px;
@@ -396,8 +399,6 @@ h2{
         transparent 90%
     );
     position: absolute;
-    top: 50px;
-    left: 10px;
     display: block;
     width: 86px;
     height: 70px;
@@ -450,6 +451,7 @@ h2{
 }
 
 .mushroom {
+    z-index: 99;
     transition: all 1.5s ease;
     display: grid;
     place-items: center;
@@ -458,58 +460,42 @@ h2{
 
     position: absolute;
     width: 30px;
-    height: 65px;
-    background-color: #e0d5b9; /* Light beige for a raw mushroom stalk */
+    height: 60px;
+    background-color: #e0d5b9; 
     border-radius: 15px;
 
-    top: 10px;
-    left: 35px;
+    top: 400px;
+    left: 850px;
 
-    transform: translate(80px, 80px);
+    animation-name: moveMushroom;
+    animation-duration: 3s;
+    animation-timing-function: linear;
 }
-
 .mushroom:before, .mushroom:after {
     transition: all 1.5s ease;
-    background-color: #b5824d; /* Lighter brown for the mushroom cap */
-    border-radius: 50% 50% 0 0; /* Smooth rounded cap */
-    display: block;
-    top: -20px; /* Move cap slightly higher to fit better */
-    width: 50px; /* Make the cap wider */
-    height: 35px; /* Adjust height for natural proportions */
+    content:"";
+    background-color: #b5824d; 
+    border-radius: 50% 50% 0 0; 
+    top: -20px; 
+    width: 50px; 
+    height: 35px; 
     position: absolute;
 }
 .mushroom:before {
     left: -10px;
 }
 
-.mushroom:after {
-    display: none; 
-}
-
 .mushroom:hover {
-    display:grid;
-    place-items: center;
-    height: 100vh;
-    margin: 0;
-
-    position:absolute;
-    width: 30px;
-    height: 65px;
     background-color: #c3c9c1;
-    border-radius: 15px;
 
-    top: 10px;
-    left: 35px;
 }
 .mushroom:hover:before,.mushroom:hover:after{
     background-color: #5a0e0e;
     border-radius: 80% 0 0 10%;
-    display: block;
     top: -20px;
     right: 16px;
-    width:35px;
+    width: 35px;
     height: 35px;
-    position: absolute;
 }
 .mushroom:hover:before{
     right:3px;
@@ -520,30 +506,15 @@ h2{
 }
 
 .mushroom:active {
-    display:grid;
-    place-items: center;
-    height: 100vh;
-    margin: 0;
-
-    position: absolute;
-
-    width: 30px;
-    height: 65px;
     background-color: #1b1a1a;
-    border-radius: 15px;
-    position: absolute;
-    top: 10px;
-    left: 35px;
 }
 .mushroom:active:before, .mushroom:active:after{
     background-color: #222222;
     border-radius: 80% 0 0 10%;
-    display: block;
     top: -20px;
     right: 16px;
-    width:35px;
+    width: 35px;
     height: 35px;
-    position: absolute;
 }
 .mushroom:active:before{
     right: 3px;
@@ -552,30 +523,47 @@ h2{
     transform: scaleX(-1);
     left: 7px;
 }
-/* .mushroom:active:after {
-    width: 100px;
-    height: 60px;
-    background-color: #222222;
-    border-radius: 50% 50% 10% 10%;
-    display: block;
-    top: -10px;
-    left: 30px;
-    width: 60px;
-    height: 30px;
-    position: absolute;
-    top: 0;
-} */
+
 
 /* animations */
 @keyframes moveMeat{
-    0% {left: 0px; top: 0px;}
-    25% {left: 50px; top: 50px;}
+    0%{left: 0px; top: 0px;}
+    10%{left:67px; top: 20px;}
+    20%{left: 134px; top: 40px;}
+    30%{left : 201px; top: 60px;}
+    40%{left: 268px; top: 80px;}
+    50%{left: 335px; top: 100px;}
+    60%{left: 402px; top: 120px;}
+    70%{left: 469px; top: 140px;}
+    80%{left: 536px; top: 160px;}
+    90%{left: 603px; top: 180px;}
+}
+@keyframes moveShrimp{
+    0%{left: 0px; top:0px;}
+    100%{left:670px; top: 400px;}
+}
+@keyframes moveSausage{
+    0%{left:0px; top:0px;}
+    100%{left: 850px; top: 190px;}
+}
+@keyframes moveMushroom{
+    0%{left:0px; top:0px;}
+    100%{left: 850px; top:400px;}
 }
 @keyframes testAnimation{
     0% {background-color: red;left: 0px; top: 0px;}
     25% {background-color: yellow; left: 200px; top: 0px;}
     50% {background-color: blue; left: 0px; top: 200px;}
     100% {background-color: green; left:0px; top:0px;}
+}
+
+.grillShape{
+    position: absolute;
+    width:400px;
+    height:400px;
+    border: 10px solid;
+    top:calc(50% -315px);
+    left: calc(50% - 200px);
 }
 /* .testing{
     width: 100px;

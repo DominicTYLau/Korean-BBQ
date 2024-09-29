@@ -410,6 +410,7 @@ p {
   color: #ff6f61; /* Heading color */
   font-size: 1.8em; /* Larger font size for heading */
   margin-bottom: 15px; /* Space below heading */
+  font-family: 'Arial', sans-serif; /* Clean sans-serif font for heading */
 }
 /* Image styling */
 .side-dish-item img {

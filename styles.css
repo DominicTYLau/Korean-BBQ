@@ -154,17 +154,16 @@ h2{
 
 /* sausage */
 .sausage {
-    display:grid;
+    display: grid;
     place-items: center;
     height: 100vh;
     margin: 0;
 
-    border-radius:10px;
+    border-radius: 10px;
     box-shadow:
         -6px 0 8px 0 rgba(92,0,0,.8) inset,
         2px 0 2px 0 rgba(33,33,33,.5),
-        0 0 5px rgba(33,33,33,.5)
-    ;
+        0 0 5px rgba(33,33,33,.5);
     position: relative;
     top: 70px;
     left: 450px;
@@ -172,8 +171,10 @@ h2{
     height: 100px;
     background: rgb(136, 1, 1);
     z-index: 1;
-}
 
+    
+    animation: cookSausage 20s infinite; 
+}
 .burntSausage {
     display:grid;
     place-items: center;
@@ -216,79 +217,62 @@ h2{
     z-index: 1;
 }
 
-/* Shrimp */
-.shrimp {
-    display:grid;
-    place-items: center;
-    height: 100vh;
-    margin: 0;
 
-    border-radius:60% / 30% 40% 10% 70%;
-    background-image:
-    radial-gradient(
-        circle at center right,
-        transparent 67%,
-        #CC4A04 68%,
-        #EF6921 74%,
-        #EF6921 85%,
-        rgba(33,33,33,.2) 86%,
-        transparent 90%
-    );
-    position: relative;
-    top: -35px;
-    left: -10px;
-    display: block;
+.shrimp {
     width: 86px;
     height: 70px;
-    z-index: 1;
-
-    transform: translate(200px,-100px);
-}
-.shrimp:before {
-    transform:rotate(24deg);
-    border-radius:85% 85% 50% 50% / 120% 120% 50% 50%;
+    border-radius: 60% / 30% 40% 10% 70%;  
+    position: relative;
+    top: 100px;
+    left: 100px;
+    animation: cookShrimp 20s infinite;  /* 20s animation */
+  }
+  
+  
+  .shrimp:before {
+    content: '';
+    transform: rotate(24deg);
+    border-radius: 85% 85% 50% 50% / 120% 120% 50% 50%;
     box-shadow:
-        1px -35px 0 -7px #EF6921,
-        0 -36px 1px -7px rgba(33,33,33,.2),
-        5px -23px 0 -8px #EF6921,
-        5px -23px 1px -7px rgba(33,33,33,.2),
-        0 -2px 0 0 rgba(222,222,222,.3) inset,
-        -2px 1px 2px rgba(33,33,33,.2)
-        ;
+      1px -35px 0 -7px #ee8b56,    
+      0 -36px 1px -7px rgba(33,33,33,.2),
+      5px -23px 0 -8px #ee8b56,
+      5px -23px 1px -7px rgba(33,33,33,.2),
+      0 -2px 0 0 rgba(222,222,222,.3) inset,
+      -2px 1px 2px rgba(33,33,33,.2);
     position: absolute;
     top: -24px;
     left: 15px;
     display: block;
     width: 18px;
     height: 45px;
-    background: #EF6921;
-}
-.shrimp:after {
-    border-radius:50%;
-    background-image:
-    radial-gradient(
-        circle at top center,
-        #EF6921 35%,
-        transparent 36%
-    ),
-    radial-gradient(
-        circle at center left,
-        #EF6921 27%,
-        #CC4A04 37%,
-        transparent 38%
-    )
-    ;
+    background: #ee8b56;  
+  }
+  
+
+  .shrimp:after {
+    content: '';
+    border-radius: 50%;
+    background-image: radial-gradient(
+      circle at top center,
+      #ee8b56 35%,   
+      transparent 36%
+    ), radial-gradient(
+      circle at center left,
+      #ee8b56 27%,   
+      #ee7c3f 37%,   
+      transparent 38%
+    );
     box-shadow:
-        -13px -86px 0 -9px rgba(222,222,222,.5),
-        -14px -85px 0 -7px rgb(33,33,33)
-    ;
+      -13px -86px 0 -9px rgba(222,222,222,.5), 
+      -14px -85px 0 -7px rgb(33,33,33);
     position: absolute;
     top: 60px;
     left: 25px;
     display: block;
     width: 22px;
     height: 22px;
-}
+  }
 .burntShrimp {
     display:grid;
     place-items: center;
@@ -493,3 +477,100 @@ h2{
                 0 0 15px rgba(0,0,0,.5);
   }
 }
+
+@keyframes cookSausage {
+    0%, 25% {
+    
+      background: rgb(245, 86, 86); 
+      box-shadow: 
+          -6px 0 8px 0 rgba(92,0,0,.8) inset,
+          2px 0 2px 0 rgba(33,33,33,.5),
+          0 0 5px rgba(33,33,33,.5);
+    }
+  
+    50% {
+  
+      background: rgb(136, 1, 1); 
+      box-shadow: 
+          -6px 0 8px 0 rgba(92,0,0,.8) inset,
+          2px 0 2px 0 rgba(33,33,33,.6),
+          0 0 5px rgba(33,33,33,.6);
+    }
+  
+    100% {
+      
+      background: rgb(36, 1, 1); 
+      box-shadow:
+          -6px 0 8px 0 rgba(92,0,0,.8) inset,
+          2px 0 2px 0 rgba(33,33,33,.6),
+          0 0 15px rgba(0,0,0,.5);
+    }
+  }
+  
+  @keyframes cookShrimp {
+    0% {
+    
+      background-image: radial-gradient(
+        circle at center right,
+        transparent 67%,
+        #e45f17 68%,   
+        #ee8b56 74%,   
+        #ee8b56 85%,   
+        rgba(33,33,33,.2) 86%,
+        transparent 90%
+      );
+    }
+  
+    25% {
+     
+      background-image: radial-gradient(
+        circle at center right,
+        transparent 67%,
+        #EB6F24 68%,   
+        #D46A2B 74%,   
+        #ED7D40 85%,   
+        rgba(33,33,33,.2) 86%,
+        transparent 90%
+      );
+    }
+  
+    50% {
+     
+      background-image: radial-gradient(
+        circle at center right,
+        transparent 67%,
+        #EF6921 68%, 
+        #CC4A04 74%,  
+        #EF6921 85%,  
+        rgba(33,33,33,.2) 86%,
+        transparent 90%
+      );
+    }
+  
+    75% {
+      
+      background-image: radial-gradient(
+        circle at center right,
+        transparent 67%,
+        #8B3810 68%,   
+        #77300A 74%,  
+        #A64910 85%,   
+        rgba(33,33,33,.2) 86%,
+        transparent 90%
+      );
+    }
+  
+    100% {
+      
+      background-image: radial-gradient(
+        circle at center right,
+        transparent 67%,
+        #331201 68%,  
+        #572002 74%,  
+        #572002 85%,  
+        rgba(33,33,33,.2) 86%,
+        transparent 90%
+      );
+    }
+  }
+  

@@ -6,7 +6,7 @@ body, html {
   overflow-x: hidden;
 }
 
-.fixed-background {
+.menu{
   position: fixed;
   top: 0;
   left: 0;
@@ -19,9 +19,9 @@ body, html {
   align-items: center;
 }
 
-.fixed-background h1 {
-  color: white;
-  font-size: 3em;
+.menu h1 {
+  color: rgb(255, 0, 0);
+  font-size: 5rem;
   text-align: center;
 }
 
@@ -30,19 +30,21 @@ body, html {
 
   z-index: 5;
   background-color: rgba(255, 255, 255, 1);
-  padding: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 0;
+  
   max-width: 100%;
   height:auto;
   margin: 0 auto;
   margin-top: 100vh; /* Start after the full height of the viewport */
+  margin-bottom: 0;
 }
 
 .scroll-content {
   padding: 20px;
-}
-
-h2 {
-  color: #333;
+  padding-bottom: 0;
 }
 
 p {
@@ -50,11 +52,14 @@ p {
 }
 
 .scroll-reveal > * {
-  max-width: 50rem;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .scroll-reveal span {
+  font-size: 3rem;
   color: rgba(223, 51, 51, 0);
   background-image: linear-gradient(to right, #000000, #000000);
   background-clip: text;
@@ -70,10 +75,7 @@ p {
   animation-range-end: contain 60vh;
 }
 
-.scroll-reveal p span {
-  animation-range-start: entry 30vh;
-  animation-range-end: contain 50vh;
-}
+
 
 @keyframes scroll-reveal {
   to {
@@ -82,25 +84,23 @@ p {
 }
 
 
-img{
-  max-width: 20%;
-}
-
 
 .food-container {
-    height: 100vh;
-    background-color: #4fe818;
+    height: 150vh;
     position: relative;
 }
 
   /* Sticky Section that overlays graphics */
   .meat-container {
-    background-color: #ff6a88;
     position: relative;
     animation:
         moveDown linear;
         animation-timeline: scroll(nearest y);
-        animation-range-start: entry 40vh;
+        animation-range-start: entry 60vh;
+  }
+
+  .meat-image img {
+    width: 30%;
   }
 
   .meat-image {
@@ -109,6 +109,7 @@ img{
     grid-template-rows: repeat(2, 1fr); /* create three grid rows */
   }
   
+
   .meat-image img {
     grid-column: 1; /* place the first image in the first column */
     grid-row: 1; /* place the first image in the first row */
@@ -151,6 +152,12 @@ img{
     position: absolute;
   }
 
+  .meat-text h2{
+    align-items: right;
+    margin: auto;
+    padding: 2rem;
+  }
+
   .meat-text h2.first-text{
     grid-column: 1; /* place the first image in the first column */
     grid-row: 1; /* place the first image in the first row */
@@ -186,62 +193,138 @@ img{
 
   .another-container{
     height: 200vh;
-    background-color: #1e241b;
     position: relative;
   }
 
   .vegetable-container {
-    background-color: #ff6a88;
     position: relative;
 
   }
 
   .vegetable-image {
     display: grid; /* make the container a grid container */
-    grid-template-columns: repeat(3, 1fr); /* create three grid columns */
+    grid-template-columns: repeat(5, 1fr); /* create three grid columns */
     grid-template-rows: repeat(2, 1fr); /* create three grid rows */
 
     animation:
     
     move linear;
     animation-timeline: scroll(nearest y);
-    animation-range-start: entry 160vh;
+    animation-range-start: entry 60vh;
   }
 
-
   .vegetable-image img {
+  width: 20%;}
+
+  .first {
+    display: flex;
     grid-column: 1; /* place the first image in the first column */
     grid-row: 1; /* place the first image in the first row */
   }
   
-  .vegetable-image img.second-image {
-    grid-column: 2; /* place the second image in the second column */
+.second {
+  display: flex;
+    grid-column: 3; /* place the second image in the second column */
     grid-row: 1; /* place the second image in the second row */
   }
   
-  .vegetable-image img.third-image {
-    grid-column: 3; /* place the third image in the third column */
+.third {
+  display: flex;
+
+    grid-column: 5; /* place the third image in the third column */
     grid-row: 1; /* place the third image in the third row */
   }
 
-  .vegetable-image img.fourth-image {
-    grid-column: 1; /* place the fourth image in the fourth column */
+.fourth {
+  display: flex;
+    grid-column: 2; /* place the fourth image in the fourth column */
     grid-row: 2; /* place the fourth image in the fourth row */
   }
 
-  .vegetable-image img.fifth-image {
-    grid-column: 2; /* place the fifth image in the fifth column */
+.fifth {
+  display: flex;
+    grid-column: 4; /* place the fifth image in the fifth column */
     grid-row: 2; /* place the fifth image in the fifth row */
-  }
-
-  .vegetable-image img.sixth-image {
-    grid-column: 3; /* place the sixth image in the sixth column */
-    grid-row: 2; /* place the sixth image in the sixth row */
   }
   
   /* Side Dishes */
 
-  #side {
+  .side-dishes-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.side-dishes {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+.side-dish-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+
+/* Image styling */
+.side-dish-item img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Text styling */
+.side-dish-item h2 {
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+}
+
+/* Fade-in and slide-up animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Delay animations for each item */
+.side-dish-item:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.side-dish-item:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.side-dish-item:nth-child(3) {
+    animation-delay: 0.9s;
+}
+
+.side-dish-item:nth-child(4) {
+    animation-delay: 1.2s;
+}
+
+.spacer{
+  height: 100vh;
+  width: 100vw;
+}
+
+  #main {
     /* Stretch it out, so that we create room for the horizontal scroll animation */
     height: 200vh;
     overflow: visible; /* To make position sticky work … */
@@ -250,28 +333,26 @@ img{
     view-timeline-axis: block;
   }
 
-  .side-dishes-container {
+  .main-dishes-container-one {
     /* Stick to Top */
     height: 100vh;
     width: 200vw;
     position: sticky;
     top: 0;
-  
+
     display: flex;
+
   }
 
-  .spacer{
-    height: 100vh;
-    width: 100vw;
-    background-color: #1e241b;
+  img.dish-image{
+    transform: scale(0.5); /* scale down to 50% of original size */
   }
 
-  .side-dishes {
+  .dish-one {
     margin: 6rem;
     height: 100vh;
-    display: grid; /* make the container a grid container */
-    grid-template-columns: repeat(4, 1fr); /* create three grid columns */
-    grid-template-rows: repeat(2, 1fr); /* create three grid rows */
+    display: flex;
+    
   
     /* Hook animation */
     will-change: transform;
@@ -281,40 +362,71 @@ img{
     animation-timeline: --section-pin-tl;
     animation-range: contain 0% contain 100%;
   }
-  
-  
-  .side-dishes img {
-    grid-column: 1; /* place the first image in the first column */
-    grid-row: 1; /* place the first image in the first row */
-  }
-  
-  .side-dishes img.second-image {
-    grid-column: 3; /* place the second image in the second column */
-    grid-row: 1; /* place the second image in the second row */
-  }
-  
-  .side-dishes img.third-image {
-    grid-column: 2; /* place the third image in the third column */
-    grid-row: 2; /* place the third image in the third row */
-  }
 
-  .side-dishes img.fourth-image {
-    grid-column: 4; /* place the fourth image in the fourth column */
-    grid-row: 2; /* place the fourth image in the fourth row */
+  #main-two {
+    /* Stretch it out, so that we create room for the horizontal scroll animation */
+    height: 200vh;
+    overflow: visible; /* To make position sticky work … */
+    
+    view-timeline-name: --section-pin-tl;
+    view-timeline-axis: block;
   }
-
-  .test{
+  .main-dishes-container-two {
+    /* Stick to Top */
     height: 100vh;
-    background-color: #ff6a88;
+    width: 200vw;
+    position: sticky;
+    top: 0;
+    display: flex;
   }
+
+  .dish-two {
+    transform: translateX(-100vw); /* start off-screen */
+
+    margin: 6rem;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+  
+    /* Hook animation */
+    will-change: transform;
+    animation: linear right forwards;
+  
+    /* Link animation to view-timeline */
+    animation-timeline: --section-pin-tl;
+    animation-range: contain 0% contain 100%;
+  }
+
+  .end-container{
+    height: 90vh;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  h2.start{
+    font-size: 36px;
+    font-weight: bold;
+    color: rgb(20, 20, 19);
+  }
+  
+   h2.end{
+    font-size: 36px;
+    font-weight: bold;
+    color: rgb(20, 20, 19);
+
+  }
+
 
 /* Create the scroll-driven animation */
 @keyframes moveDown {
     0% {
         transform: translateY(0px);  /* Starting position */
     }
-    100% {
-        transform: translateY(80vh);  /* End position after scrolling */
+    50% {
+        transform: translateY(300vh);  /* End position after scrolling */
     }
 }
 
@@ -325,7 +437,7 @@ img{
     }
     50%{
       transform: translateX(0px);  /* Starting position */
-      transform: translateY(80vh);  /* End position after scrolling */
+      transform: translateY(180vh);  /* End position after scrolling */
     }
 
     100% {
@@ -337,13 +449,22 @@ img{
 @keyframes horizontal {
 	to {
 		/* Move horizontally so that right edge is aligned against the viewport */
-		transform: translateX(calc(-17.5% - 100vw));
+		transform: translateX(calc(-60% - 50vw));
 	}
 }
 
-.static-content {
-    padding-top: 150px;
-    text-align: center;
+.side-dishes-container.scroll-end .side-dishes h2 {
+  animation: text-reveal 1s forwards;
+}
+
+@keyframes right {
+  0% {
+    transform: translateX(-100vw);
+  }
+	100% {
+		/* Move horizontally so that right edge is aligned against the viewport */
+		transform: translateX(calc(-100% + 100vw));
+	}
 }
 
 

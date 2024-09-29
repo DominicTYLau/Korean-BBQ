@@ -26,12 +26,12 @@ h2{
   width: 80px;
   height: 80px;
 
-  /* Shifting position of the meat */
+ 
   transform: translate(700px,100px); 
   z-index: 1;
 
-  /* Apply the animation */
-  animation: cookMeat 20s infinite; /* 10s cycle */
+
+  animation: cookMeat 20s infinite; /* 10s */
 }
 
 .meat:before,
@@ -110,9 +110,9 @@ h2{
     width: 75px;
     height: 75px;
     background: radial-gradient(circle at 30% 30%, 
-                                #ff6b6b 0%, /* Bright pinkish-red */
-                                #d9534f 30%, /* Deeper red toward the center */
-                                #b03a2e 60%); /* Darker red for depth */
+                                #ff6b6b 0%, 
+                                #d9534f 30%, 
+                                #b03a2e 60%); 
     box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.2);
     position: relative;
     z-index: 1;
@@ -521,7 +521,7 @@ h2{
       );
     }
   
-    25% {
+    25% {z
      
       background-image: radial-gradient(
         circle at center right,

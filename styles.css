@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap');
+
 body, html {
   margin: 0;
   padding: 0;
@@ -17,12 +19,50 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
+  justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack elements vertically */
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .menu h1 {
-  color: rgb(255, 0, 0);
-  font-size: 5rem;
+  animation: fadeIn 2s ease-in; /* Fade-in effect */
+}
+.menu h1 {
+  font-family: 'Gowun Batang', sans-serif; /* Use the selected font */
+  font-size: 8rem; /* Increase the font size */
+  color: #ffffff; /* Text color */
+    text-align: center; /* Centered text */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Shadow effect */
+  /*color: rgb(255, 0, 0);*/
+  background: linear-gradient(45deg, rgb(255, 0, 0), rgb(255, 187, 0)); /* Gradient background */
+    -webkit-background-clip: text; /* Clipping background for text */
+    -webkit-text-fill-color: transparent; /* Fill color for text */
+    transition: transform 0.3s ease; /* Smooth transform transition */  
   text-align: center;
+
+  border: 5px solid rgba(255, 255, 255, 0.5); /* White border */
+    border-radius: 15px; /* Rounded corners */
+
+    background-color: rgba(0, 0, 0, 0.7); /* Black with 70% opacity */
+    padding: 20px; /* Padding for spacing */
+}
+.menu h1:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.menu p.subtext {
+  font-family: 'Times New Roman', sans-serif; /* Use the same font */
+  font-size: 2rem; /* Adjust the size as needed */
+  color: #ffffff; /* White color */
+  text-align: center; /* Center the text */
+  font-style: italic; /* Italics for subtext */
+  margin-top: 10px; /* Space between title and subtext */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Subtle shadow */
 }
 
 .scroll-container {

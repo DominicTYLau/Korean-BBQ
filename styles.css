@@ -188,8 +188,9 @@ h2{
         0 0 5px rgba(33,33,33,.5)
     ;
     position: absolute;
-    top: 190px;
-    left: 850px;
+    top: 0px;
+    left: 0px;
+    opacity:0;
     width: 25px;
     height: 100px;
     background: rgb(245, 86, 86);
@@ -198,6 +199,8 @@ h2{
     animation-name: moveSausage;
     animation-duration: 3s;
     animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
 }
 .sausage:hover { /* cooked */
     display:grid;
@@ -263,9 +266,12 @@ h2{
     height: 70px;
     z-index: 1;
 
+    opacity: 0;
     animation-name: moveShrimp;
     animation-duration:3s;
+    animation-delay: 6s;
     animation-timing-function: linear;
+    animation-fill-mode: forwards;
 }
 .shrimp:before {
     transform:rotate(24deg);
@@ -466,10 +472,12 @@ h2{
 
     top: 400px;
     left: 850px;
-
+    opacity: 0;
     animation-name: moveMushroom;
     animation-duration: 3s;
+    animation-delay: 9s;
     animation-timing-function: linear;
+    animation-fill-mode: forwards;
 }
 .mushroom:before, .mushroom:after {
     transition: all 1.5s ease;
@@ -487,7 +495,6 @@ h2{
 
 .mushroom:hover {
     background-color: #c3c9c1;
-
 }
 .mushroom:hover:before,.mushroom:hover:after{
     background-color: #5a0e0e;
@@ -527,28 +534,20 @@ h2{
 
 /* animations */
 @keyframes moveMeat{
-    0%{left: 0px; top: 0px;}
-    10%{left:67px; top: 20px;}
-    20%{left: 134px; top: 40px;}
-    30%{left : 201px; top: 60px;}
-    40%{left: 268px; top: 80px;}
-    50%{left: 335px; top: 100px;}
-    60%{left: 402px; top: 120px;}
-    70%{left: 469px; top: 140px;}
-    80%{left: 536px; top: 160px;}
-    90%{left: 603px; top: 180px;}
+    0%{left: 0px; top: 0px; opacity: 0;}
+    100%{left: 850; top: 190; opacity: 100%;}
 }
 @keyframes moveShrimp{
-    0%{left: 0px; top:0px;}
-    100%{left:670px; top: 400px;}
+    0%{left: 0px; top:0px; opacity: 0;}
+    100%{left:670px; top: 400px; opacity: 100%}
 }
 @keyframes moveSausage{
-    0%{left:0px; top:0px;}
-    100%{left: 850px; top: 190px;}
+    0%{left:0px; top:0px;opacity: 0;}
+    100%{left: 850px; top: 190px;opacity: 100%;}
 }
 @keyframes moveMushroom{
-    0%{left:0px; top:0px;}
-    100%{left: 850px; top:400px;}
+    0%{left:0px; top:0px; opacity: 0;}
+    100%{left: 850px; top:400px; opacity: 100%;}
 }
 @keyframes testAnimation{
     0% {background-color: red;left: 0px; top: 0px;}

@@ -322,7 +322,7 @@ p {
     background-color: #ffffff; /* White background for items */
     padding: 15px 20px; /* Padding inside items */
     margin: 10px 0; /* Space between items */
-    border-left: 6px solid #ff5c5c; /* Left border with a fresh green color */
+    border-left: 6px solid #ff5c5c; 
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
     font-size: 1.1em; /* Slightly larger font for items */
     color: #333; /* Dark text color */
@@ -396,8 +396,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1rem 0; /* Space between items */
-  width:20%;
+  margin: 20px;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1s ease forwards;
@@ -406,6 +405,7 @@ p {
 .side-dish-item {
   background-color: #ffffff; /* White background for items */
   padding: 15px 20px; /* Padding inside items */
+  margin: 10px 0; /* Space between items */
   border-left: 6px solid #ff6f61; /* Left border with a vibrant color */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
   font-size: 1.1em; /* Slightly larger font for items */
@@ -418,7 +418,6 @@ p {
   color: #ff6f61; /* Heading color */
   font-size: 1.8em; /* Larger font size for heading */
   margin-bottom: 15px; /* Space below heading */
-  font-family: 'Arial', sans-serif; /* Clean sans-serif font for heading */
 }
 /* Image styling */
 .side-dish-item img {
@@ -510,7 +509,8 @@ p {
 
   .dish-one {
     margin: 6rem;
-    height: 100vh;
+    height: 75vh;
+    width: 125vh;
     display: flex;
     
   
@@ -544,8 +544,8 @@ p {
     transform: translateX(-100vw); /* start off-screen */
 
     margin: 6rem;
-    height: 100vh;
-    width: 100vw;
+    height: 70vh;
+    width: 125vh;
     display: flex;
   
     /* Hook animation */

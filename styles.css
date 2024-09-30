@@ -319,7 +319,14 @@ p {
     grid-template-columns: repeat(5, 1fr); /* create three grid columns */
     grid-template-rows: repeat(2, 1fr); /* create three grid rows */
     font-family: 'Gowun Batang', sans-serif; /* Use the same font for consistency */
-
+    background-color: #ffffff; /* White background for items */
+    padding: 15px 20px; /* Padding inside items */
+    margin: 10px 0; /* Space between items */
+    border-left: 6px solid #ff5c5c; /* Left border with a fresh green color */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    font-size: 1.1em; /* Slightly larger font for items */
+    color: #333; /* Dark text color */
+    border-radius: 6px; /* Rounded corners for items */
 
     animation:
     
@@ -327,6 +334,7 @@ p {
     animation-timeline: scroll(nearest y);
     animation-range-start: entry 60vh;
   }
+
 
   .vegetable-image img {
   width: 20%;}

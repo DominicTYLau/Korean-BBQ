@@ -388,7 +388,8 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
+  margin: 1rem 0; /* Space between items */
+  width:20%;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1s ease forwards;
@@ -397,7 +398,6 @@ p {
 .side-dish-item {
   background-color: #ffffff; /* White background for items */
   padding: 15px 20px; /* Padding inside items */
-  margin: 10px 0; /* Space between items */
   border-left: 6px solid #ff6f61; /* Left border with a vibrant color */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
   font-size: 1.1em; /* Slightly larger font for items */

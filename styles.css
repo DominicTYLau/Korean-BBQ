@@ -384,16 +384,16 @@ body {
     width: 86px;
     height: 70px;
     z-index: 1;
-    left:50px;
-    top: 150px;
 
+    opacity: 0;
     animation-name: moveShrimp;
     animation-duration:3s;
     animation-delay: 6s;
-    animation-fill-mode:forwards;
     animation-timing-function: linear;
+    animation-fill-mode: forwards;
 }
 .shrimp:before {
+    content: '';
     transform:rotate(24deg);
     border-radius:85% 85% 50% 50% / 120% 120% 50% 50%;
     box-shadow:
@@ -410,9 +410,11 @@ body {
     display: block;
     width: 18px;
     height: 45px;
+    opacity: 100%;
     background: #ee8b56;
 }
 .shrimp:after {
+    content: '';
     border-radius:50%;
     background-image:
     radial-gradient(
@@ -437,6 +439,7 @@ body {
     display: block;
     width: 22px;
     height: 22px;
+    z-index: 10;
 }
 .shrimp:hover {
     display:grid;
@@ -967,5 +970,5 @@ body {
 }
 @keyframes movePorkBelly{
     0%{left: 0; top: 0; opacity: 0}
-    100%{left: 670px; top: 350px; opacity: 100%; transform: rotate(90deg);}
+    100%{left: 270px; top: 100px; opacity: 100%; transform: rotate(90deg);}
 }

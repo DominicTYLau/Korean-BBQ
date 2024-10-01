@@ -1,17 +1,19 @@
 body {
-    font-family: 'Noto Sans KR', sans-serif;
-    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%    ;
-    background-attachment: fixed;
-  }
+  font-family: 'Noto Sans KR', sans-serif;
+  background-image: url('https://imgs.search.brave.com/3nOSUQBa1fGIdKZ3J4d9jCKLs5h84t-pXCfZg8Vz3gM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJhY2Nlc3Mu/Y29tL2Z1bGwvNTQ4/NDczLmpwZw'); /* Replace with your image URL */
+  background-size: cover; 
+  background-position: center; 
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-attachment: fixed;   
+}
   
   .menu-container {
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);

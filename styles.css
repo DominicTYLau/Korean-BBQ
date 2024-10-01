@@ -173,6 +173,8 @@ body {
     animation-name: moveMeat;
     animation-duration: 3s;
     animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    z-index: 1000;
 }
 
 .meat:before,
@@ -220,15 +222,14 @@ body {
     width: 50px;
     height: 50px;
 
-    background: #B45227;
-    z-index: 1;
+    background: #a75e3d;
 
 }
 .meat:hover:before,
 .meat:hover:after {
     border-radius: 45%;
     box-shadow:
-    15px 0 0 0 rgba(33,33,33,.2),
+    15px 0 0 0 rgba(66, 66, 66, 0.2),
     30px 0 0 0 rgba(33,33,33,.2);
     position: absolute;
     display: block;
@@ -258,7 +259,7 @@ body {
     border-radius: 50% / 30% 70% 25% 50%;
     width: 50px;
     height: 50px;
-    background: #3b231c;
+    background: #774130;
     box-shadow: 0 0 0 6px rgba(0,0,0,.6) inset,
                 0 0 15px rgba(0,0,0,.5);
     position: absolute;
@@ -383,13 +384,14 @@ body {
     width: 86px;
     height: 70px;
     z-index: 1;
+    left:50px;
+    top: 150px;
 
-    opacity: 0;
     animation-name: moveShrimp;
     animation-duration:3s;
     animation-delay: 6s;
+    animation-fill-mode:forwards;
     animation-timing-function: linear;
-    animation-fill-mode: forwards;
 }
 .shrimp:before {
     transform:rotate(24deg);
@@ -457,7 +459,6 @@ body {
     display: block;
     width: 86px;
     height: 70px;
-    z-index: 1;
 
 }
 .shrimp:hover:before {
@@ -931,12 +932,12 @@ body {
 }
 
 @keyframes moveMeat{
-    0%{left: 0px; top: 0px; opacity: 0;}
-    100%{left: 630px; top: 190px; opacity: 100%;}
+    0%{left: -200px; top: 0px; opacity: 50%;}
+    100%{left: 50px; top: 50px; opacity: 100%}
 }
 @keyframes moveShrimp{
-    0%{left: 0px; top:0px; opacity: 0;}
-    100%{left:640px; top: 300px; opacity: 100%}
+    0%{left: -200px; top:0px; opacity: 0;}
+    100%{left:50px; top: 150px; opacity: 100%}
 }
 @keyframes moveSausage{
     0%{left:0px; top:0px;opacity: 0;}

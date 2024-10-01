@@ -150,6 +150,772 @@ body {
   }
 }
 
+.meat{ /*raw meat */
+    transition: all 1.5s ease;
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius: 50% / 30% 70% 25% 50%;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle at 30% 30%, 
+                                #ff6b6b 0%, /* Bright pinkish-red */
+                                #d9534f 30%, /* Deeper red toward the center */
+                                #b03a2e 60%); /* Darker red for depth */
+    box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    z-index: 1;
+
+    top: 200px;
+    left: 670px;
+    animation-name: moveMeat;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+}
+
+.meat:before,
+.meat:after {
+    content: '';
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 10%, transparent 40%);
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+
+.meat:before {
+    transform: rotate(30deg);
+    background: radial-gradient(circle at 20% 50%,
+                                rgba(255,255,255,0.8) 5%,
+                                transparent 30%),
+                radial-gradient(circle at 80% 30%,
+                                rgba(255,255,255,0.6) 5%,
+                                transparent 35%);
+}
+
+.meat:after {
+    transform: rotate(-30deg);
+    background: radial-gradient(circle at 70% 60%,
+                                rgba(255,255,255,0.7) 5%,
+                                transparent 35%),
+                radial-gradient(circle at 40% 20%,
+                                rgba(255,255,255,0.5) 10%,
+                                transparent 50%);
+}
+.meat:hover { /* cooked meat */
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius: 50% / 30% 70% 25% 50%;
+    box-shadow:
+    0 0 0 6px rgba(255,255,255,.3) inset,
+    0 0 6px rgba(33,33,33,.3);
+    position: absolute;
+    width: 50px;
+    height: 50px;
+
+    background: #B45227;
+    z-index: 1;
+
+}
+.meat:hover:before,
+.meat:hover:after {
+    border-radius: 45%;
+    box-shadow:
+    15px 0 0 0 rgba(33,33,33,.2),
+    30px 0 0 0 rgba(33,33,33,.2);
+    position: absolute;
+    display: block;
+    width: 6px;
+    height: 50%;
+    background: rgba(33,33,33,.2);
+    }
+    
+.meat:hover:before {
+    transform: rotate(30deg);
+    top: 5px;
+    left: 15px;
+    }
+    
+.meat:hover:after {
+    transform: rotate(-60deg);
+    top: 20px;
+    left: 15px;
+    }
+
+.meat:active { /*burnt meat */
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius: 50% / 30% 70% 25% 50%;
+    width: 50px;
+    height: 50px;
+    background: #3b231c;
+    box-shadow: 0 0 0 6px rgba(0,0,0,.6) inset,
+                0 0 15px rgba(0,0,0,.5);
+    position: absolute;
+    z-index: 1;
+
+}
+.meat:active:before,
+.meat:active:after {
+    content:'';
+    border-radius: 50%;
+    box-shadow: 10px 0 0 0 rgba(0,0,0,.6),
+                20px 0 0 0 rgba(0,0,0,.6);
+    position: absolute;
+    display: block;
+    width: 6px;
+    height: 60%;
+    background: rgba(0,0,0, 0.6); /* burn marks */
+}
+
+.meat:active:before {
+    transform: rotate(30deg);
+    /* top: 15px;
+    left: 30px; */
+    top: 5px;
+    left: 20px;
+}
+
+.meat:active:after {
+    transform: rotate(-30deg);
+    /* top: 27px;
+    left: 25px; */
+    top: 17px;
+    left: 15px;
+}
+
+
+/* sausage */
+.sausage { /* raw */
+    transition: all 1.5s ease;
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius:10px;
+    box-shadow:
+        -6px 0 8px 0 rgba(92,0,0,.8) inset,
+        2px 0 2px 0 rgba(33,33,33,.5),
+        0 0 5px rgba(33,33,33,.5)
+    ;
+    position: absolute;
+    opacity:0;
+    width: 20px;
+    height: 80px;
+    background: rgb(245, 86, 86);
+    z-index: 1;
+
+    animation-name: moveSausage;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+}
+.sausage:hover { /* cooked */
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius:10px;
+    box-shadow:
+        -6px 0 8px 0 rgba(92,0,0,.8) inset,
+        2px 0 2px 0 rgba(33,33,33,.5),
+        0 0 5px rgba(33,33,33,.5)
+    ;
+    position: absolute;
+    width: 20px;
+    height: 80px;
+    background: rgb(136, 1, 1);
+    z-index: 1;
+}
+.sausage:active { /* burnt */
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius:10px;
+    box-shadow:
+        -6px 0 8px 0 rgba(92,0,0,.8) inset,
+        2px 0 2px 0 rgba(33,33,33,.6),
+        0 0 5px rgba(33,33,33,.6)
+    ;
+    position: absolute;
+    width: 20px;
+    height: 80px;
+    background: rgb(36, 1, 1);
+    z-index: 1;
+}
+
+/* Shrimp */
+.shrimp {
+    transition: all 1.5s ease;
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius:60% / 30% 40% 10% 70%;
+    background-image:
+    radial-gradient(
+        circle at center right,
+        transparent 67%,
+        #e45f17 68%,
+        #ee8b56 74%,
+        #ee8b56 85%,
+        rgba(33,33,33,.2) 86%,
+        transparent 90%
+    );
+    position: absolute;
+    display: block;
+    width: 86px;
+    height: 70px;
+    z-index: 1;
+
+    opacity: 0;
+    animation-name: moveShrimp;
+    animation-duration:3s;
+    animation-delay: 6s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+.shrimp:before {
+    transform:rotate(24deg);
+    border-radius:85% 85% 50% 50% / 120% 120% 50% 50%;
+    box-shadow:
+        1px -35px 0 -7px #ee8b56,
+        0 -36px 1px -7px rgba(33,33,33,.2),
+        5px -23px 0 -8px #ee8b56,
+        5px -23px 1px -7px rgba(33,33,33,.2),
+        0 -2px 0 0 rgba(222,222,222,.3) inset,
+        -2px 1px 2px rgba(33,33,33,.2)
+        ;
+    position: absolute;
+    top: -24px;
+    left: 15px;
+    display: block;
+    width: 18px;
+    height: 45px;
+    background: #ee8b56;
+}
+.shrimp:after {
+    border-radius:50%;
+    background-image:
+    radial-gradient(
+        circle at top center,
+        #ee8b56 35%,
+        transparent 36%
+    ),
+    radial-gradient(
+        circle at center left,
+        #ee8b56 27%,
+        #ee7c3f 37%,
+        transparent 38%
+    )
+    ;
+    box-shadow:
+        -13px -86px 0 -9px rgba(222,222,222,.5),
+        -14px -85px 0 -7px rgb(33,33,33)
+    ;
+    position: absolute;
+    top: 60px;
+    left: 25px;
+    display: block;
+    width: 22px;
+    height: 22px;
+}
+.shrimp:hover {
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius:60% / 30% 40% 10% 70%;
+    background-image:
+    radial-gradient(
+        circle at center right,
+        transparent 67%,
+        #CC4A04 68%,
+        #EF6921 74%,
+        #EF6921 85%,
+        rgba(33,33,33,.2) 86%,
+        transparent 90%
+    );
+    position: absolute;
+    display: block;
+    width: 86px;
+    height: 70px;
+    z-index: 1;
+
+}
+.shrimp:hover:before {
+    transform:rotate(24deg);
+    border-radius:85% 85% 50% 50% / 120% 120% 50% 50%;
+    box-shadow:
+        1px -35px 0 -7px #EF6921,
+        0 -36px 1px -7px rgba(33,33,33,.2),
+        5px -23px 0 -8px #EF6921,
+        5px -23px 1px -7px rgba(33,33,33,.2),
+        0 -2px 0 0 rgba(222,222,222,.3) inset,
+        -2px 1px 2px rgba(33,33,33,.2)
+        ;
+    position: absolute;
+    top: -24px;
+    left: 15px;
+    display: block;
+    width: 18px;
+    height: 45px;
+    background: #EF6921;
+}
+.shrimp:hover:after {
+    border-radius:50%;
+    background-image:
+    radial-gradient(
+        circle at top center,
+        #EF6921 35%,
+        transparent 36%
+    ),
+    radial-gradient(
+        circle at center left,
+        #EF6921 27%,
+        #CC4A04 37%,
+        transparent 38%
+    )
+    ;
+    box-shadow:
+        -13px -86px 0 -9px rgba(222,222,222,.5),
+        -14px -85px 0 -7px rgb(33,33,33)
+    ;
+    position: absolute;
+    top: 60px;
+    left: 25px;
+    display: block;
+    width: 22px;
+    height: 22px;
+}
+.shrimp:active {
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius:60% / 30% 40% 10% 70%;
+    background-image:
+    radial-gradient(
+        circle at center right,
+        transparent 67%,
+        #331201 68%,
+        #572002 74%,
+        #572002 85%,
+        rgba(33,33,33,.2) 86%,
+        transparent 90%
+    );
+    position: absolute;
+    display: block;
+    width: 86px;
+    height: 70px;
+    z-index: 1;
+}
+.shrimp:active:before {
+    transform:rotate(24deg);
+    border-radius:85% 85% 50% 50% / 120% 120% 50% 50%;
+    box-shadow:
+        1px -35px 0 -7px #572002,
+        0 -36px 1px -7px rgba(33,33,33,.2),
+        5px -23px 0 -8px #572002,
+        5px -23px 1px -7px rgba(33,33,33,.2),
+        0 -2px 0 0 rgba(222,222,222,.3) inset,
+        -2px 1px 2px rgba(33,33,33,.2)
+        ;
+    position: absolute;
+    top: -24px;
+    left: 15px;
+    display: block;
+    width: 18px;
+    height: 45px;
+    background: #572002;
+}
+.shrimp:active:after {
+    border-radius:50%;
+    background-image:
+    radial-gradient(
+        circle at top center,
+        #572002 35%,
+        transparent 36%
+    ),
+    radial-gradient(
+        circle at center left,
+        #572002 27%,
+        #270f02 37%,
+        transparent 38%
+    )
+    ;
+    box-shadow:
+        -13px -86px 0 -9px rgba(222,222,222,.5),
+        -14px -85px 0 -7px rgb(33,33,33)
+    ;
+    position: absolute;
+    top: 60px;
+    left: 25px;
+    display: block;
+    width: 22px;
+    height: 22px;
+}
+
+.mushroom {
+    z-index: 99;
+    transition: all 1.5s ease;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    position: absolute;
+    width: 30px;
+    height: 60px;
+    background-color: #e0d5b9; 
+    border-radius: 15px;
+
+    opacity: 0;
+    animation-name: moveMushroom;
+    animation-duration: 3s;
+    animation-delay: 9s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+.mushroom:before, .mushroom:after {
+    transition: all 1.5s ease;
+    content:"";
+    background-color: #b5824d; 
+    border-radius: 50% 50% 0 0; 
+    top: -20px; 
+    width: 50px; 
+    height: 35px; 
+    position: absolute;
+}
+.mushroom:before {
+    left: -10px;
+}
+
+.mushroom:hover {
+    background-color: #c3c9c1;
+}
+.mushroom:hover:before,.mushroom:hover:after{
+    background-color: #5a0e0e;
+    border-radius: 80% 0 0 10%;
+    top: -20px;
+    right: 16px;
+    width: 35px;
+    height: 35px;
+}
+.mushroom:hover:before{
+    right:3px;
+}
+.mushroom:hover:after{
+    transform: scaleX(-1);
+    left: 7px;
+}
+
+.mushroom:active {
+    background-color: #1b1a1a;
+}
+.mushroom:active:before, .mushroom:active:after{
+    background-color: #222222;
+    border-radius: 80% 0 0 10%;
+    top: -20px;
+    right: 16px;
+    width: 35px;
+    height: 35px;
+}
+.mushroom:active:before{
+    right: 3px;
+}
+.mushroom:active:after{
+    transform: scaleX(-1);
+    left: 7px;
+}
+
+.cube {
+    transition: all 1.5s ease;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(45deg, #ff4d4d 40%, #ff6666 60%);
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+
+    transform: rotate(30deg);
+    animation-name: moveCubes;
+    animation-delay: 12s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-duration: 3s;
+}
+.cube:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1) 10px,
+        transparent 10px,
+        transparent 20px
+    );
+    border-radius: 10px;
+}
+.cube:hover{
+    background: linear-gradient(45deg, #B45227 40%, #eb9b6c 60%);
+}
+.cube:hover:before{
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(241, 207, 179, 0.1),
+        rgba(245, 199, 168, 0.1) 10px,
+        transparent 10px,
+        transparent 20px
+    );
+}
+.cube:active{
+    background: linear=gradient(45deg, #160a05 40%, #331f15 60%);
+}
+.cube:active:before{
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(99, 83, 70, 0.1),
+        rgba(109, 85, 68, 0.1) 10px,
+        transparent 10px,
+        transparent 20px
+    );
+}
+.cube1 {
+    opacity: 0;
+    left: -60px;
+    top: -20px;
+    animation-name: moveCube1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay:12s;
+}
+.cube2 {
+    opacity: 0;
+
+    left: -30px;
+    top: -30px;
+    transform: rotate(15deg);
+    animation-name: moveCube2;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay: 12.1s;
+}
+.cube3 {
+    opacity: 0;
+
+    top: -40px;
+    transform: rotate(-10deg);
+    animation-name: moveCube3;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay: 12.2s;
+}
+.cube4 {
+    opacity: 0;
+
+    left: -90px;
+    top: -50px;
+    transform: rotate(30deg);
+    animation-name: moveCube4;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay: 12.3s;
+}
+.pork-belly {
+    transition: all 1.5s ease;
+    width: 40px;
+    height: 160px;
+    background: linear-gradient(45deg,
+      #ffb49b 20%, /* Meat color */
+      #ffb396 30%, /* Lighter fat section */
+      #ff8d76 40%, /* Meat color */
+      #ffd2c0 55%, /* Fat section */
+      #fc7d64 65%, /* Meat color */
+      #ffb298 75% /* Meat color */
+    );
+    border-radius: 15px;
+    position: absolute;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
+
+    animation-name: movePorkBelly;
+    animation-duration:3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-delay: 15s;
+    opacity: 0;
+}
+.pork-belly:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        40deg,
+        rgba(255, 255, 255, 0.151),
+        rgba(255, 255, 255, 0.3) 7px,
+        transparent 20px,
+        transparent 35px
+    );
+    border-radius: 15px;
+    opacity: 0.6;
+}
+
+  /* Creating additional layers of streaks */
+.pork-belly:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.2) 12px,
+        transparent 12px,
+        transparent 24px
+    );
+    border-radius: 15px;
+    opacity: 0.4;
+}
+
+.pork-belly:hover {
+    transition: all 1.5s ease;
+    width: 40px;
+    height: 160px;
+    background: linear-gradient(45deg,
+      #ff9b7a 20%, /* Meat color */
+      #ffb396 30%, /* Lighter fat section */
+      #ff6f52 40%, /* Meat color */
+      #ffb396 55%, /* Fat section */
+      #ff6f52 65%, /* Meat color */
+      #ff9b7a 75% /* Meat color */
+    );
+    border-radius: 15px;
+    position: absolute;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.pork-belly:hover:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        40deg,
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0.3) 7px,
+        transparent 20px,
+        transparent 35px
+    );
+    border-radius: 15px;
+    opacity: 0.6;
+}
+.pork-belly:hover:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.2) 12px,
+        transparent 12px,
+        transparent 24px
+    );
+    border-radius: 15px;
+    opacity: 0.4;
+}
+.pork-belly:active {
+    transition: all 1.5s ease;
+    width: 40px;
+    height: 160px;
+    background: linear-gradient(45deg, 
+      #aa7766 20%, /* Meat color */
+      #a87662 30%, /* Lighter fat section */
+      #86483c 40%, /* Meat color */
+      #ceaa9c 55%, /* Fat section */
+      #994b3c 65%, /* Meat color */
+      #a37161 75% /* Meat color */
+    );
+    border-radius: 15px;
+    position: absolute;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
+
+    animation-name: movePorkBelly;
+    animation-duration:3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    opacity: 0;
+}
+.pork-belly:active:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        40deg,
+        rgba(17, 6, 6, 0.151),
+        rgba(54, 31, 31, 0.3) 7px,
+        transparent 20px,
+        transparent 35px
+    );
+    border-radius: 15px;
+    opacity: 0.6;
+}
+
+  /* Creating additional layers of streaks */
+.pork-belly:active:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        -45deg,
+        rgba(70, 63, 63, 0.2),
+        rgba(73, 69, 69, 0.2) 12px,
+        transparent 12px,
+        transparent 24px
+    );
+    border-radius: 15px;
+    opacity: 0.4;
+}
+
+
 @keyframes roastSmoke {
   0% {
     transform: scale(0.2) translateY(0);

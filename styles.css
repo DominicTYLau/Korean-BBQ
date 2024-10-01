@@ -39,8 +39,8 @@ h2{
     margin: 0;
 
     border-radius: 50% / 30% 70% 25% 50%;
-    width: 75px;
-    height: 75px;
+    width: 50px;
+    height: 50px;
     background: radial-gradient(circle at 30% 30%, 
                                 #ff6b6b 0%, /* Bright pinkish-red */
                                 #d9534f 30%, /* Deeper red toward the center */
@@ -98,12 +98,11 @@ h2{
     0 0 0 6px rgba(255,255,255,.3) inset,
     0 0 6px rgba(33,33,33,.3);
     position: absolute;
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
 
     background: #B45227;
     z-index: 1;
-
 
 }
 .meat:hover:before,
@@ -114,21 +113,21 @@ h2{
     30px 0 0 0 rgba(33,33,33,.2);
     position: absolute;
     display: block;
-    width: 4px;
-    height: 60%;
+    width: 6px;
+    height: 50%;
     background: rgba(33,33,33,.2);
     }
     
 .meat:hover:before {
     transform: rotate(30deg);
-    top: 9px;
-    left: 24px;
+    top: 5px;
+    left: 15px;
     }
     
 .meat:hover:after {
     transform: rotate(-60deg);
-    top: 30px;
-    left: 30px;
+    top: 20px;
+    left: 15px;
     }
 
 .meat:active { /*burnt meat */
@@ -138,8 +137,8 @@ h2{
     margin: 0;
 
     border-radius: 50% / 30% 70% 25% 50%;
-    width: 75px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     background: #3b231c;
     box-shadow: 0 0 0 6px rgba(0,0,0,.6) inset,
                 0 0 15px rgba(0,0,0,.5);
@@ -162,14 +161,18 @@ h2{
 
 .meat:active:before {
     transform: rotate(30deg);
-    top: 15px;
-    left: 30px;
+    /* top: 15px;
+    left: 30px; */
+    top: 5px;
+    left: 20px;
 }
 
 .meat:active:after {
     transform: rotate(-30deg);
-    top: 27px;
-    left: 25px;
+    /* top: 27px;
+    left: 25px; */
+    top: 17px;
+    left: 15px;
 }
 
 
@@ -188,11 +191,9 @@ h2{
         0 0 5px rgba(33,33,33,.5)
     ;
     position: absolute;
-    top: 0px;
-    left: 0px;
     opacity:0;
-    width: 25px;
-    height: 100px;
+    width: 20px;
+    height: 80px;
     background: rgb(245, 86, 86);
     z-index: 1;
 
@@ -215,8 +216,8 @@ h2{
         0 0 5px rgba(33,33,33,.5)
     ;
     position: absolute;
-    width: 25px;
-    height: 100px;
+    width: 20px;
+    height: 80px;
     background: rgb(136, 1, 1);
     z-index: 1;
 }
@@ -233,8 +234,8 @@ h2{
         0 0 5px rgba(33,33,33,.6)
     ;
     position: absolute;
-    width: 25px;
-    height: 100px;
+    width: 20px;
+    height: 80px;
     background: rgb(36, 1, 1);
     z-index: 1;
 }
@@ -259,8 +260,6 @@ h2{
         transparent 90%
     );
     position: absolute;
-    top: 400px;
-    left: 670px;
     display: block;
     width: 86px;
     height: 70px;
@@ -470,8 +469,6 @@ h2{
     background-color: #e0d5b9; 
     border-radius: 15px;
 
-    top: 400px;
-    left: 850px;
     opacity: 0;
     animation-name: moveMushroom;
     animation-duration: 3s;
@@ -531,24 +528,134 @@ h2{
     left: 7px;
 }
 
+.cube {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(45deg, #ff4d4d 40%, #ff6666 60%);
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+
+    transform: rotate(30deg);
+    animation-name: moveCubes;
+    animation-delay: 12s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-duration: 3s;
+}
+.cube:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1) 10px,
+        transparent 10px,
+        transparent 20px
+    );
+    border-radius: 10px;
+}
+
+.cube1 {
+    opacity: 0;
+    left: -60px;
+    top: -20px;
+}
+.cube2 {
+    opacity: 0;
+
+    left: -30px;
+    top: -30px;
+}
+.cube3 {
+    opacity: 0;
+}
+.pork-belly {
+    width: 40px;
+    height: 160px;
+    background: linear-gradient(45deg, 
+      #ff9b7a 20%, /* Meat color */
+      #ffb396 30%, /* Lighter fat section */
+      #ff6f52 40%, /* Meat color */
+      #ffb396 55%, /* Fat section */
+      #ff6f52 65%, /* Meat color */
+      #ff9b7a 75% /* Meat color */
+    );
+    border-radius: 15px;
+    position: absolute;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
+
+    animation-name: movePorkBelly;
+  }
+
+  .pork-belly:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      40deg,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.3) 7px,
+      transparent 20px,
+      transparent 35px
+    );
+    border-radius: 15px;
+    opacity: 0.6;
+  }
+
+  /* Creating additional layers of streaks */
+  .pork-belly:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2) 12px,
+      transparent 12px,
+      transparent 24px
+    );
+    border-radius: 15px;
+    opacity: 0.4;
+  }
 
 /* animations */
 @keyframes moveMeat{
     0%{left: 0px; top: 0px; opacity: 0;}
-    100%{left: 850; top: 190; opacity: 100%;}
+    100%{left: 630px; top: 190px; opacity: 100%;}
 }
 @keyframes moveShrimp{
     0%{left: 0px; top:0px; opacity: 0;}
-    100%{left:670px; top: 400px; opacity: 100%}
+    100%{left:640px; top: 300px; opacity: 100%}
 }
 @keyframes moveSausage{
     0%{left:0px; top:0px;opacity: 0;}
-    100%{left: 850px; top: 190px;opacity: 100%;}
+    100%{left: 750px; top: 190px;opacity: 100%;}
 }
 @keyframes moveMushroom{
     0%{left:0px; top:0px; opacity: 0;}
-    100%{left: 850px; top:400px; opacity: 100%;}
+    100%{left: 750px; top:300px; opacity: 100%;}
 }
+@keyframes moveCubes{
+    0%{left: 0; top:0; opacity: 0}
+    100%{left: 840px; top: 210px; opacity: 100%}
+}
+@keyframes movePorkBelly{
+    0%{left: 0; top: 0; opacity: 0}
+    100%{left: 630px; top: 400px; opacity: 100%; transform: rotate(90deg);}
+}
+
+
 @keyframes testAnimation{
     0% {background-color: red;left: 0px; top: 0px;}
     25% {background-color: yellow; left: 200px; top: 0px;}

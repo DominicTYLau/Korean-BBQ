@@ -147,7 +147,7 @@ p {
   }
 
   .meat-image img {
-    width: 60%;
+    width: 30%;
   }
 
   .meat-image {
@@ -304,6 +304,13 @@ p {
 
   /* Vegetable Section */
   
+
+  
+  .vegetable-section.in-view .vegetable-title {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .another-container{
     height: 200vh;
     position: relative;
@@ -318,7 +325,6 @@ p {
     display: grid; /* make the container a grid container */
     grid-template-columns: repeat(5, 1fr); /* create three grid columns */
     grid-template-rows: repeat(2, 1fr); /* create three grid rows */
-    font-family: 'Gowun Batang', sans-serif; /* Use the same font for consistency */
     background-color: #ffffff; /* White background for items */
     padding: 15px 20px; /* Padding inside items */
     margin: 10px 0; /* Space between items */
@@ -337,7 +343,29 @@ p {
 
 
   .vegetable-image img {
-  width: 20%;}
+  width: 50%;
+  height: 60%;
+}
+
+  .vegetable-image h2 {
+    font-family: 'Gowun Batang', sans-serif; /* Use the same font for consistency */
+    font-size: 2em; /* Adjust size as needed */
+    color: #555; /* Text color */
+    text-align: left; /* Align left */
+    margin: 20px 0; /* Margin for spacing */
+    padding: 15px; /* Padding for spacing */
+    background-color: rgba(255, 255, 255, 0.7); /* Translucent background */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Transition for background color */
+    font-weight: bold; /* Makes the text stand out */
+    text-align: center; /* Centers the text */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and scale */
+  }
+
+  .vegetable-image h2:hover {
+    color: #FF6347; /* Change to a color of your choice on hover */
+    transform: scale(1.1); /* Slightly increase the size on hover */
+}
 
   .first {
     display: flex;
@@ -370,7 +398,14 @@ p {
     grid-row: 2; /* place the fifth image in the fifth row */
   }
   
-
+  .vegetable-section {
+    scroll-margin-top: 100px; /* Adjust this based on the exact point */
+    position: relative;
+    overflow: hidden; /* Ensure that no hidden items are visible prematurely */
+    padding-top: 200px; /* Adjust this to control when the subtitle comes into view */
+    padding-bottom: 200px;
+  }
+  
   
   /* Side Dishes */
 
@@ -400,6 +435,16 @@ p {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1s ease forwards;
+}
+
+.side-dish h1 {
+  font-family: 'Gowun Batang', sans-serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 80%;
 }
 
 .side-dish-item {

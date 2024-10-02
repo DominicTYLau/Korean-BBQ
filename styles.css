@@ -917,6 +917,32 @@ body {
     opacity: 0.4;
 }
 
+.plates-container-right {
+    position: absolute;
+    top: 100px;
+    right: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.plate {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    border: 3px solid #ccc;
+    margin-bottom: 20px;
+}
+.plates-container-left {
+    position: absolute;
+    top: 100px;
+    left: 120px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;  
+}
+
 /* animations */
 @keyframes roastSmoke {
   0% {

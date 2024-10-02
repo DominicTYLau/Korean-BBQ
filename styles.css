@@ -898,6 +898,76 @@ body {
     opacity: 0.6;
 }
 
+.plateKimchi {
+    position: absolute;;
+    width: 140px;
+    height: 140px;
+
+    background: radial-gradient(circle, #f9f9f9 60%, #ccc 100%);
+    border-radius: 50%;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+
+    top: 50px;
+    left: 300px;
+}
+.kimchi {
+    position: relative;
+    width: 40px;
+    height: 50px;
+    background: linear-gradient(45deg, #ff6b3a 10%, #ff9045 60%, #ff441d 100%);
+    border-radius: 60% 40% 70% 50%;
+    box-shadow: 
+        0 5px 5px rgba(0,0,0,0.3), 
+        inset 0 -3px 5px rgba(0,0,0,0.1), 
+        inset 0 3px 3px rgba(255,255,255,0.2);
+    margin: 10px;
+    transform: rotate(calc(15deg * var(--rotate, 0)));
+}
+.kimchi::before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 30px;
+    background: radial-gradient(circle at 30% 30%, #ff441d, transparent 60%);
+    border-radius: 60% 40% 50% 60%;
+    top: 10px;
+    left: 10px;
+    transform: rotate(-10deg);
+}
+.kimchi::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 20px;
+    background: linear-gradient(45deg, #ff9b57 30%, #ff6b3a 100%);
+    border-radius: 50% 50% 40% 40%;
+    top: 30px;
+    right: 5px;
+    box-shadow: 
+        0 3px 3px rgba(0,0,0,0.2), 
+        inset 0 -2px 3px rgba(255,255,255,0.1);
+}
+.kimchi:nth-child(1) {
+    --rotate: -1;
+}
+
+.kimchi:nth-child(2) {
+    --rotate: 2;
+}
+
+.kimchi:nth-child(3) {
+    --rotate: -2;
+}
+
+.kimchi:nth-child(4) {
+    --rotate: 1;
+}
   /* Creating additional layers of streaks */
 .pork-belly:active:after {
     content: '';

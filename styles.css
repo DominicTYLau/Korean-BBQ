@@ -15,7 +15,7 @@ body{
 h1, h2 {
     font-family: 'Times New Roman', cursive;
     color: #333;
-    text-shadow: 2px 2px #77cb8e;
+    text-shadow: 2px 2px #cb7777;
     margin-bottom: 20px;
 }
 
@@ -43,7 +43,7 @@ h2 {
 a{
     text-decoration: none;
     color: white;
-    background-color: #72d49d;
+    background-color: #e06666;
     padding: 1rem 2rem;
     border-radius: 10px;
     font-weight: bold;
@@ -80,7 +80,7 @@ a:hover {
 }
 
 a:hover{
-    background-color: #58dbc3;
+    background-color: #db8a58;
     transform: scale(1.05); /* Slightly enlarges the button on hover */
     color: white;
 }

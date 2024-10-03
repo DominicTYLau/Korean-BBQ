@@ -519,11 +519,6 @@ p {
 }
 
 .spacer{
-  height: 100vh;
-  width: 100vw;
-}
-
-.spacer{
     height: 100vh;
     width: 100vw;
   }
@@ -649,53 +644,55 @@ p {
       view-timeline-name: --section-pin-tl;
       view-timeline-axis: block;
     }
-
-/* Create the scroll-driven animation */
-@keyframes moveDown {
-    0% {
-        transform: translateY(0px);  /* Starting position */
-    }
-    50% {
-        transform: translateY(300vh);  /* End position after scrolling */
-    }
-}
-
-@keyframes move{
-    0% {
-        transform: translateY(0px);
-        transform: translateX(0px);  /* Starting position */
-    }
-    50%{
-      transform: translateX(0px);  /* Starting position */
-      transform: translateY(180vh);  /* End position after scrolling */
-    }
-
-    100% {
-        transform: translateX(100vw);  /* End position after scrolling */
-
-    }
-}
-
-@keyframes horizontal {
-	to {
-		/* Move horizontally so that right edge is aligned against the viewport */
-		transform: translateX(calc(-60% - 50vw));
-	}
-}
-
-.side-dishes-container.scroll-end .side-dishes h2 {
-  animation: text-reveal 1s forwards;
-}
-
-@keyframes right {
-  0% {
-    transform: translateX(-100vw);
+  
+  
+  /* Create the scroll-driven animation */
+  @keyframes moveDown {
+      0% {
+          transform: translateY(0px);  /* Starting position */
+      }
+      50% {
+          transform: translateY(300vh);  /* End position after scrolling */
+      }
   }
-	100% {
-		/* Move horizontally so that right edge is aligned against the viewport */
-		transform: translateX(calc(-100% + 100vw));
-	}
-}
-
-
-
+  
+  @keyframes move{
+      0% {
+          transform: translateY(0px);
+          transform: translateX(0px);  /* Starting position */
+      }
+      50%{
+        transform: translateX(0px);  /* Starting position */
+        transform: translateY(180vh);  /* End position after scrolling */
+      }
+  
+      100% {
+          transform: translateX(100vw);  /* End position after scrolling */
+  
+      }
+  }
+  
+  @keyframes horizontal {
+      to {
+          /* Move horizontally so that right edge is aligned against the viewport */
+          transform: translateX(calc(-60% - 50vw));
+      }
+  }
+  
+  .side-dishes-container.scroll-end .side-dishes h2 {
+    animation: text-reveal 1s forwards;
+  }
+  
+  @keyframes goToRight {
+    0% {
+      transform: translateX(-100vw);
+    }
+      100% {
+          /* Move horizontally so that right edge is aligned against the viewport */
+          transform: translateX(calc(-100% + 100vw));
+      }
+  }
+  
+  
+  
+  

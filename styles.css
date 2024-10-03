@@ -333,7 +333,7 @@ p {
     view-timeline-axis: block;
   }
 
-  .main-dishes-container-one {
+  .right {
     /* Stick to Top */
     height: 100vh;
     width: 200vw;
@@ -348,7 +348,7 @@ p {
     transform: scale(0.5); /* scale down to 50% of original size */
   }
 
-  .dish-one {
+  .dish-right{
     margin: 6rem;
     height: 100vh;
     display: flex;
@@ -371,7 +371,7 @@ p {
     view-timeline-name: --section-pin-tl;
     view-timeline-axis: block;
   }
-  .main-dishes-container-two {
+  .dish-left {
     /* Stick to Top */
     height: 100vh;
     width: 200vw;
@@ -380,7 +380,7 @@ p {
     display: flex;
   }
 
-  .dish-two {
+  .dish-left {
     transform: translateX(-100vw); /* start off-screen */
 
     margin: 6rem;
@@ -390,7 +390,7 @@ p {
   
     /* Hook animation */
     will-change: transform;
-    animation: linear right forwards;
+    animation: linear goToRight forwards;
   
     /* Link animation to view-timeline */
     animation-timeline: --section-pin-tl;
@@ -417,6 +417,33 @@ p {
     font-weight: bold;
     color: rgb(20, 20, 19);
 
+  }
+
+  #main-three {
+    /* Stretch it out, so that we create room for the horizontal scroll animation */
+    height: 200vh;
+    overflow: visible; /* To make position sticky work … */
+    
+    view-timeline-name: --section-pin-tl;
+    view-timeline-axis: block;
+  }
+
+  #main-four {
+    /* Stretch it out, so that we create room for the horizontal scroll animation */
+    height: 200vh;
+    overflow: visible; /* To make position sticky work … */
+    
+    view-timeline-name: --section-pin-tl;
+    view-timeline-axis: block;
+  }
+
+  #main-five {
+    /* Stretch it out, so that we create room for the horizontal scroll animation */
+    height: 200vh;
+    overflow: visible; /* To make position sticky work … */
+    
+    view-timeline-name: --section-pin-tl;
+    view-timeline-axis: block;
   }
 
 
@@ -457,7 +484,7 @@ p {
   animation: text-reveal 1s forwards;
 }
 
-@keyframes right {
+@keyframes goToRight {
   0% {
     transform: translateX(-100vw);
   }

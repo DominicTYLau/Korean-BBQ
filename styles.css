@@ -1,0 +1,36 @@
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f5f5f5;
+    margin: auto;
+    padding: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+
+.container{
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+
+}
+
+a{
+    color: aquamarine;
+    background-color: black;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: auto;
+}
+
+a:hover{
+    background-color: aquamarine;
+    color: black;
+    transition: 1s;
+}

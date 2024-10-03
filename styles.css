@@ -117,5 +117,3 @@ a:hover{
     opacity: 0; /* Hidden initially */
     z-index: 1000; /* Ensures it's visible above other elements */
 }
-
-

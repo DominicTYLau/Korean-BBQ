@@ -605,6 +605,8 @@ p {
   
     }
   
+    
+
     h2.start{
       font-size: 36px;
       font-weight: bold;
@@ -644,8 +646,55 @@ p {
       view-timeline-name: --section-pin-tl;
       view-timeline-axis: block;
     }
+
+    .right h2
+    {
+        font-family: 'Gowun Batang', sans-serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 80%;
+  font-size: 2rem;
+    }
+    .left h2
+    {
+        font-family: 'Gowun Batang', sans-serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 80%;
+  font-size: 2rem;
+    }
+    .right h3{
+        font-family: 'Gowun Batang', sans-serif;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        width: 80%;
+        font-size: 1rem;
+    }
+    .left h3{
+        font-family: 'Gowun Batang', sans-serif;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        width: 80%;
+        font-size: 1rem;
+    }
   
-  
+    .end-container h2{
+        font-family: 'Gowun Batang', sans-serif;
+
+    }
+
   /* Create the scroll-driven animation */
   @keyframes moveDown {
       0% {

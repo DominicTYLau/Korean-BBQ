@@ -523,140 +523,132 @@ p {
   width: 100vw;
 }
 
-  #main {
-    /* Stretch it out, so that we create room for the horizontal scroll animation */
-    height: 200vh;
-    overflow: visible; /* To make position sticky work … */
-    
-    view-timeline-name: --section-pin-tl;
-    view-timeline-axis: block;
-  }
-
-  
-  .main-dishes-container-one h1{
-  font-family: 'Gowun Batang', sans-serif;
-  font-size: 2rem;
-  color: #333; /* Darker text color */
-    position: relative; /* For positioning the shadow */
-    transition: color 0.3s ease, transform 0.3s ease; /* Transition for color and transform */
-  }
-
-  .main-dishes-container-one {
-    /* Stick to Top */
+.spacer{
     height: 100vh;
-    width: 200vw;
-    position: sticky;
-    top: 0;
-
-    display: flex;
-
+    width: 100vw;
   }
-
-
-  img.dish-image{
-    transform: scale(0.5); /* scale down to 50% of original size */
-  }
-
-  .dish-one {
-    margin: 6rem;
-    height: 75vh;
-    width: 125vh;
-    display: flex;
+  
+    #main {
+      /* Stretch it out, so that we create room for the horizontal scroll animation */
+      height: 200vh;
+      overflow: visible; /* To make position sticky work … */
+      
+      view-timeline-name: --section-pin-tl;
+      view-timeline-axis: block;
+    }
+  
+    .right {
+      /* Stick to Top */
+      height: 100vh;
+      width: 200vw;
+      position: sticky;
+      top: 0;
+  
+      display: flex;
+  
+    }
+  
+    img.dish-image{
+      transform: scale(0.5); /* scale down to 50% of original size */
+    }
+  
+    .dish-right{
+      margin: 6rem;
+      height: 100vh;
+      display: flex;
+      
     
-  
-    /* Hook animation */
-    will-change: transform;
-    animation: linear horizontal forwards;
-  
-    /* Link animation to view-timeline */
-    animation-timeline: --section-pin-tl;
-    animation-range: contain 0% contain 100%;
-  }
-  .text {
-    padding: 20px; /* Add padding for text */
-    text-align: left; /* Align text to the left */
-}
-  .first-text
-  {
-    font-family: 'Gowun Batang', sans-serif; 
-    font-size: 25px; /* Adjust font size */
-    color: #333; /* Dark color for better readability */
-    text-align: center; /* Center the text */
-    margin: 10px 0; /* Space between names */
-    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
-  }
-
-  .first-text:hover {
-    color: #3CB371; /* Change color on hover */
-    transform: scale(1.05); /* Slightly enlarge on hover */
-}
-
-.second-text
-{
-  font-family: 'Gowun Batang', sans-serif; 
-    font-size: 15px; /* Adjust font size */
-    color: #333; /* Dark color for better readability */
-    text-align: center; /* Center the text */
-    margin: 10px 0; /* Space between names */
-    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
-}
-
-  #main-two {
-    /* Stretch it out, so that we create room for the horizontal scroll animation */
-    height: 200vh;
-    overflow: visible; /* To make position sticky work … */
+      /* Hook animation */
+      will-change: transform;
+      animation: linear horizontal forwards;
     
-    view-timeline-name: --section-pin-tl;
-    view-timeline-axis: block;
-  }
-  .main-dishes-container-two {
-    /* Stick to Top */
-    height: 100vh;
-    width: 200vw;
-    position: sticky;
-    top: 0;
-    display: flex;
-  }
-
-  .dish-two {
-    transform: translateX(-100vw); /* start off-screen */
-
-    margin: 6rem;
-    height: 70vh;
-    width: 125vh;
-    display: flex;
+      /* Link animation to view-timeline */
+      animation-timeline: --section-pin-tl;
+      animation-range: contain 0% contain 100%;
+    }
   
-    /* Hook animation */
-    will-change: transform;
-    animation: linear right forwards;
+    #main-two {
+      /* Stretch it out, so that we create room for the horizontal scroll animation */
+      height: 200vh;
+      overflow: visible; /* To make position sticky work … */
+      
+      view-timeline-name: --section-pin-tl;
+      view-timeline-axis: block;
+    }
+    .dish-left {
+      /* Stick to Top */
+      height: 100vh;
+      width: 200vw;
+      position: sticky;
+      top: 0;
+      display: flex;
+    }
   
-    /* Link animation to view-timeline */
-    animation-timeline: --section-pin-tl;
-    animation-range: contain 0% contain 100%;
-  }
-
+    .dish-left {
+      transform: translateX(-100vw); /* start off-screen */
   
-  .end-container{
-    height: 90vh;
-    padding: 4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-  }
-
-  h2.start{
-    font-size: 36px;
-    font-weight: bold;
-    color: rgb(20, 20, 19);
-  }
+      margin: 6rem;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+    
+      /* Hook animation */
+      will-change: transform;
+      animation: linear goToRight forwards;
+    
+      /* Link animation to view-timeline */
+      animation-timeline: --section-pin-tl;
+      animation-range: contain 0% contain 100%;
+    }
   
-   h2.end{
-    font-size: 36px;
-    font-weight: bold;
-    color: rgb(20, 20, 19);
-
-  }
+    .end-container{
+      height: 90vh;
+      padding: 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+    }
+  
+    h2.start{
+      font-size: 36px;
+      font-weight: bold;
+      color: rgb(20, 20, 19);
+    }
+    
+     h2.end{
+      font-size: 36px;
+      font-weight: bold;
+      color: rgb(20, 20, 19);
+  
+    }
+  
+    #main-three {
+      /* Stretch it out, so that we create room for the horizontal scroll animation */
+      height: 200vh;
+      overflow: visible; /* To make position sticky work … */
+      
+      view-timeline-name: --section-pin-tl;
+      view-timeline-axis: block;
+    }
+  
+    #main-four {
+      /* Stretch it out, so that we create room for the horizontal scroll animation */
+      height: 200vh;
+      overflow: visible; /* To make position sticky work … */
+      
+      view-timeline-name: --section-pin-tl;
+      view-timeline-axis: block;
+    }
+  
+    #main-five {
+      /* Stretch it out, so that we create room for the horizontal scroll animation */
+      height: 200vh;
+      overflow: visible; /* To make position sticky work … */
+      
+      view-timeline-name: --section-pin-tl;
+      view-timeline-axis: block;
+    }
 
 /* Create the scroll-driven animation */
 @keyframes moveDown {

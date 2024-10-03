@@ -12,25 +12,117 @@ body{
 }
 
 
+h1, h2 {
+    font-family: 'Times New Roman', cursive;
+    color: #333;
+    text-shadow: 2px 2px #77cb8e;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #444;
+}
+
+
 .container{
-    background-color: white;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-    margin: 1rem;
+    background-color: #fff;
+    padding: 3rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.15);
+    margin: 2rem;
+    max-width: 800px; /* Restricts the width for a cleaner layout */
+    animation: fadeIn 1s ease-in-out;
 
 }
 
 a{
-    color: aquamarine;
-    background-color: black;
-    border-radius: 1rem;
-    padding: 2rem;
-    margin: auto;
+    text-decoration: none;
+    color: white;
+    background-color: #72d49d;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    position: relative;
+    width: 100%;
+}
+
+footer .social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.5rem;
+}
+
+footer .social-icons a:hover {
+    color: #ff6b6b;
+}
+
+h1 {
+    text-shadow: 0 0 10px rgba(255, 102, 102, 0.7);
+}
+
+a:hover {
+    box-shadow: 0 0 15px rgba(255, 102, 102, 0.7);
 }
 
 a:hover{
-    background-color: aquamarine;
-    color: black;
-    transition: 1s;
+    background-color: #58dbc3;
+    transform: scale(1.05); /* Slightly enlarges the button on hover */
+    color: white;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover Effect to Fly the Bird */
+#twitterIcon:hover + .bird {
+    transform: translateX(-100vw); /* Fly across the screen horizontally from right to left */
+    opacity: 1; /* Make the bird visible */
+}
+
+/* Make sure the bird is placed on top */
+.bird {
+    font-size: 2rem; /* Adjust bird size */
+    position: fixed;
+    top: 50%;
+    right: -50px; /* Off-screen to the right */
+    transform: translateY(-50%);
+    transition: transform 4s ease-in-out, opacity 0.5s ease-in-out; /* Smooth flying effect */
+    opacity: 0; /* Hidden initially */
+    z-index: 1000; /* Ensures it's visible above other elements */
+}
+
+
+
+.social-icons a {
+    color: #1DA1F2;
+    font-size: 2rem;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #0d8ed4;
 }

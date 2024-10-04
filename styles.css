@@ -71,7 +71,7 @@ h1, h2 {
     background-color: #f7ebfa; /* Lightest lavender */
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Softer shadow */
-    transition: transform 0.4s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for transform, background, and shadow */
+    transition: transform 1.0s ease, background-color 1.5s ease, box-shadow 0.3s ease; /* Smooth transitions for transform, background, and shadow */
 }
 
 /* Images */
@@ -104,7 +104,7 @@ h1, h2 {
 
 /* Hover Effects */
 .menu-list li:hover {
-    background-color: #f0e6f7; /* Slightly darker lavender on hover */
+    background-color: #d9a5ff; /* Slightly darker lavender on hover */
     transform: scale(1.05) rotate(2deg); /* Scale and rotate on hover */
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); /* Increase shadow size */
 }

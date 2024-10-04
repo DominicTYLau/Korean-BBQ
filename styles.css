@@ -3,10 +3,25 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fff0f6; /* Light pink */
+    background-color: #f0eaff; /* Light lavender */
     color: #333;
+    position: relative; /* Required for the absolute positioning of the shadow */
 }
 
+/* Bottom Shadow Effect */
+body::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0; /* Position it at the bottom */
+    height: 50px; /* Height of the shadow */
+    background: rgba(255, 255, 255, 0.2); /* Light white background for softness */
+    box-shadow: 0 10px 20px rgba(138, 43, 226, 0.5); /* Violet shadow */
+    border-radius: 50% 50% 0 0; /* Rounded top for a cute effect */
+}
+
+/* Menu Container */
 .menu-container {
     width: 90%;
     max-width: 1200px;
@@ -17,21 +32,21 @@ body {
 /* Headers */
 h1, h2 {
     text-align: center;
-    color: #ff8ab8; /* Soft pink */
+    color: #9b59b6; /* Soft purple */
 }
 
 /* Restaurant Name */
 .restaurant-name {
     font-size: 3em;
     margin: 20px 0;
-    color: #ff6f91; /* Pastel pink */
-    text-shadow: 1px 1px 0 #ffcce6; /* Lighter pink for extra cute effect */
+    color: #a55ee5; /* Pastel purple */
+    text-shadow: 1px 1px 0 #d8c3e8; /* Lighter purple for extra cute effect */
 }
 
 /* Menu Section */
 .menu-section {
     margin-bottom: 40px;
-    background-color: #ffe4ec; /* Soft pastel pink background */
+    background-color: #e8d3f2; /* Soft pastel lavender background */
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for cuteness */
@@ -40,7 +55,6 @@ h1, h2 {
 .menu-section h2 {
     font-size: 2em;
     margin-bottom: 10px;
-    color: #ffb6c1; /* Lighter pastel pink */
 }
 
 /* Menu List */
@@ -54,10 +68,10 @@ h1, h2 {
     align-items: center;
     margin-bottom: 15px;
     padding: 10px;
-    background-color: #fff7fc; /* Lightest pink */
+    background-color: #f7ebfa; /* Lightest lavender */
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Softer shadow */
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.4s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for transform, background, and shadow */
 }
 
 /* Images */
@@ -65,39 +79,41 @@ h1, h2 {
     width: 60px;
     height: 60px;
     margin-right: 20px;
-    border-radius: 50%;
-    border: 2px solid #ffadc6; /* Soft pink border */
+    border-radius: 50%; /* Rounded corners */
+    border: 2px solid #d6aad3; /* Soft purple border */
 }
 
 /* Dish Name */
 .dish-name {
     flex-grow: 1;
     font-size: 1.5em;
-    color: #ff85a2; /* Cute pink for dish names */
+    color: #a76ab7; /* Cute purple for dish names */
     font-weight: bold;
+    transition: color 0.3s ease; /* Smooth color transition */
 }
 
 /* Price */
 .price {
     font-size: 1.2em;
-    color: #70c1ff; /* Soft blue for contrast */
+    color: #5ab9e4; /* Soft teal for contrast */
     font-weight: bold;
-    background-color: #e3f7ff; /* Light blue background for prices */
+    background-color: #e1f3fa; /* Light teal background for prices */
     padding: 5px 10px;
     border-radius: 10px;
 }
 
 /* Hover Effects */
 .menu-list li:hover {
-    background-color: #ffeef7; /* Slightly darker pink on hover */
-    transform: scale(1.05);
+    background-color: #f0e6f7; /* Slightly darker lavender on hover */
+    transform: scale(1.05) rotate(2deg); /* Scale and rotate on hover */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); /* Increase shadow size */
 }
 
 .menu-list li:hover .dish-name {
-    color: #ff6f91; /* Darker pastel pink on hover */
+    color: #9b59b6; /* Darker soft purple on hover */
 }
 
 .menu-list li:hover .price {
-    background-color: #d1efff; /* Lighter blue hover effect */
-    color: #4aa1ff; /* Darker blue for price on hover */
+    background-color: #d0f0fa; /* Lighter teal hover effect */
+    color: #3fa1cc; /* Darker teal for price on hover */
 }

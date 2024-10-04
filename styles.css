@@ -1,236 +1,103 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-
-
-
-:root {
-  /* Base Colors */
-  --background-color: rgb(33, 33, 33);        /* Dark Charcoal */
-  --secondary-background-color: rgb(44, 62, 80);        /* Dark Charcoal */
-  --secondary-light-gray: rgb(232, 231, 231);
-  --highlight-color: rgb(255, 82, 82);        /* Vibrant Red */
-  --text-color: rgb(255, 255, 255);        /* White */
-}
-
+/* General Styles */
 body {
-  font-family: 'Noto Sans KR', sans-serif;
-  background: linear-gradient(180deg, rgb(33, 33, 33), rgb(44, 62, 80));
-  margin: 1rem;
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  background-attachment: fixed;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff0f6; /* Light pink */
+    color: #333;
 }
 
 .menu-container {
-  background-color: var(--secondary-background-color);
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  width: 80%;
-  max-width: 100%;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
+/* Headers */
+h1, h2 {
+    text-align: center;
+    color: #ff8ab8; /* Soft pink */
+}
+
+/* Restaurant Name */
 .restaurant-name {
-  text-align: center;
-  text-shadow: 4px 4px 4px rgba(0, 0, 0, 1);
-  font-size: 3rem;
-  color: var(--highlight-color);
-  margin-bottom: 1rem;
-  font-family: 'Raleway', serif;
-  font-weight: bold;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-   animation: fadeIn 1s ease; /* Fade in animation */
+    font-size: 3em;
+    margin: 20px 0;
+    color: #ff6f91; /* Pastel pink */
+    text-shadow: 1px 1px 0 #ffcce6; /* Lighter pink for extra cute effect */
 }
 
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-  }
-  to {
-      opacity: 1;
-  }
-}
-
+/* Menu Section */
 .menu-section {
-  margin-bottom: 2rem;
+    margin-bottom: 40px;
+    background-color: #ffe4ec; /* Soft pastel pink background */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for cuteness */
 }
 
 .menu-section h2 {
-  font-size: 1.8em;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
-  color: var(--text-color);
-  margin-bottom: 15px;
-  border-bottom: 3px solid var(--highlight-color);
-  text-transform: uppercase;
-  animation: slideIn 0.5s ease; /* Slide in animation */
-  animation-delay: 0.5s; /* Delay for section titles */
-  opacity: 0; /* Start hidden */
-  animation-fill-mode: forwards; /* Keep final state */
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #ffb6c1; /* Lighter pastel pink */
 }
 
-@keyframes slideIn {
-  0% {
-      transform: translateY(-20px);
-      opacity: 0;
-  }
-  100% {
-      transform: translateY(0);
-      opacity: 1;
-  }
-}
-
+/* Menu List */
 .menu-list {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+    list-style-type: none;
+    padding: 0;
 }
 
-li {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background-color: var(--secondary-light-gray);
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-  animation: bounceIn 0.5s ease; 
-  opacity: 1; 
-  animation-fill-mode: forwards; /* Keep final state */
+.menu-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #fff7fc; /* Lightest pink */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Softer shadow */
+    transition: all 0.3s ease-in-out;
 }
 
-@keyframes bounceIn {
-  0% {
-      transform: scale(0.5);
-      opacity: 0;
-  }
-  50% {
-      transform: scale(1.1);
-      opacity: 1;
-  }
-  100% {
-      transform: scale(1);
-  }
+/* Images */
+.menu-list li img {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    border-radius: 50%;
+    border: 2px solid #ffadc6; /* Soft pink border */
 }
 
-li:hover {
-  transform: translateY(-5px);
-  background-color: var(--highlight-color);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
+/* Dish Name */
 .dish-name {
-  font-weight: bold;
-  color: var(--background-color);
-  font-size: 1.2em;
-  margin-top: 10px;
-  text-align: center;
-  animation: pulse 1s infinite alternate; /* Pulsing animation */
+    flex-grow: 1;
+    font-size: 1.5em;
+    color: #ff85a2; /* Cute pink for dish names */
+    font-weight: bold;
 }
 
-@keyframes pulse {
-  0% {
-      transform: scale(1);
-  }
-  100% {
-      transform: scale(1.05);
-  }
-}
-
+/* Price */
 .price {
-  color: #666;
-  font-size: 1.2em;
-  font-weight: bold;
-  margin-top: 5px;
+    font-size: 1.2em;
+    color: #70c1ff; /* Soft blue for contrast */
+    font-weight: bold;
+    background-color: #e3f7ff; /* Light blue background for prices */
+    padding: 5px 10px;
+    border-radius: 10px;
 }
 
-li:hover .price, li:hover .dish-name {
-  color: #fff;
-  animation: shake 0.5s; /* Shake animation on hover */
+/* Hover Effects */
+.menu-list li:hover {
+    background-color: #ffeef7; /* Slightly darker pink on hover */
+    transform: scale(1.05);
 }
 
-@keyframes shake {
-  0% {
-      transform: translateX(0);
-  }
-  25% {
-      transform: translateX(-5px);
-  }
-  50% {
-      transform: translateX(5px);
-  }
-  75% {
-      transform: translateX(-5px);
-  }
-  100% {
-      transform: translateX(0);
-  }
+.menu-list li:hover .dish-name {
+    color: #ff6f91; /* Darker pastel pink on hover */
 }
 
-li img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, filter 0.3s ease; /* Image zoom on hover */
-  animation: fadeInImage 0.5s ease; /* Fade in image */
-}
-
-@keyframes fadeInImage {
-  from {
-      opacity: 0;
-      transform: translateY(-10px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-
-li:hover img {
-  transform: scale(1.1); /* Zoom effect on hover */
-  filter: brightness(1.2); /* Brighten effect on hover */
-}
-
-@media (max-width: 768px) {
-  .menu-list {
-      grid-template-columns: 1fr;
-  }
-  
-  li img {
-      width: 80px;
-      height: 80px;
-  }
-  
-  .dish-name, .price {
-      font-size: 1em;
-  }
-}
-
-@media (max-width: 480px) {
-  .menu-container {
-      width: 90%;
-  }
-  
-  .restaurant-name {
-      font-size: 2em;
-  }
-  
-  .menu-section h2 {
-      font-size: 1.5em;
-  }
-  
-  .dish-name, .price {
-      font-size: 1em;
-  }
+.menu-list li:hover .price {
+    background-color: #d1efff; /* Lighter blue hover effect */
+    color: #4aa1ff; /* Darker blue for price on hover */
 }

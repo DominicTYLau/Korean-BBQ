@@ -1,0 +1,211 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-image: url('https://imgs.search.brave.com/3nOSUQBa1fGIdKZ3J4d9jCKLs5h84t-pXCfZg8Vz3gM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJhY2Nlc3Mu/Y29tL2Z1bGwvNTQ4/NDczLmpwZw'); /* Replace with your image URL */
+    background-size: cover; 
+    background-position: center; 
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-attachment: fixed;   
+  }
+    
+    .menu-container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      width: 600px;
+      max-width: 100%;
+  
+      transition: box-shadow 0.4s ease;
+    }
+    .menu-container:hover {
+  
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    }
+    
+    .restaurant-name {
+      text-align: center;
+      font-size: 2.5em;
+      color: #ff6347;
+      margin-bottom: 20px;
+      font-family: 'Georgia', serif;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    
+    .menu-section {
+      margin-bottom: 30px;
+    }
+    
+    .menu-section h2 {
+      font-size: 1.8em;
+      color: #333;
+      margin-bottom: 15px;
+      border-bottom: 3px solid #ff6347;
+      text-transform: uppercase;
+    }
+    
+    .menu-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    
+    li {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background-color: #fafafa;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    li:hover {
+      transform: translateY(-5px);
+      background-color: #ff6347;
+    }
+    
+    .dish-name {
+      font-weight: bold;
+      color: #444;
+      font-size: 1.2em;
+      margin-top: 10px;
+      text-align: center;
+    }
+    
+    .price {
+      color: #666;
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+    
+    li:hover .price, li:hover .dish-name {
+      color: #fff;
+    }
+    
+    li img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    @media (max-width: 768px) {
+      .menu-list {
+          grid-template-columns: 1fr;
+      }
+      
+      li img {
+          width: 80px;
+          height: 80px;
+      }
+      
+      .dish-name, .price {
+          font-size: 1em;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .menu-container {
+          width: 90%;
+      }
+      
+      .restaurant-name {
+          font-size: 2em;
+      }
+      
+      .menu-section h2 {
+          font-size: 1.5em;
+      }
+      
+      .dish-name, .price {
+          font-size: 1em;
+      }
+    }
+    
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px); 
+        opacity: 1;
+      }
+      20% {
+        opacity: 1; 
+      }
+      40% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh); 
+        opacity: 0; 
+      }
+    }
+    
+    .kalbi {
+      position: fixed;
+      width: 100px; 
+      height: 100px;
+      animation: fall 4s linear infinite; 
+      left: calc(50% - 50px); 
+      top: -100px; 
+  }
+    .kalbi:nth-child(1) {
+      animation-delay: 0s;
+    }
+    
+    .kalbi:nth-child(2) {
+      animation-delay: 1s;
+      left: calc(30% - 50px); 
+    }
+    
+    .kalbi:nth-child(3) {
+      animation-delay: 2s;
+      left: calc(70% - 50px);
+    }
+    
+    .kalbi:nth-child(4) {
+      animation-delay: 3s;
+      left: calc(20% - 50px);
+    }
+    
+    .kalbi:nth-child(5) {
+      animation-delay: 4s;
+      left: calc(80% - 50px);
+    }
+    
+    .kalbi:nth-child(6) {
+      animation-delay: 5s;
+      left: calc(60% - 50px);
+    }
+  
+    #basket {
+      position: fixed;
+      bottom: 20px; 
+      left: 0; 
+      width: 120px; 
+      height: auto; 
+      animation: moveBasket 5s linear infinite; 
+  }
+  
+  
+  @keyframes moveBasket {
+      0% {
+          left: 0; 
+      }
+      50% {
+          left: calc(100% - 120px); 
+      }
+      100% {
+          left: 0; 
+      }
+  }

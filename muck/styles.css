@@ -1,0 +1,1158 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+    cursor: url('tongs.png'), auto;
+}
+
+
+.table {
+    position: relative;
+    width: 80%;
+    height: 80%;
+    background-color: rgb(96, 66, 14);
+    background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png'); /* Wood texture */
+    background-size: cover;
+    border: 10px solid #5c3f15;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(7, 7, 7, 0.4);
+    overflow: hidden;
+    margin: auto;
+    padding: 2rem;
+}
+
+.square-grill {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px; 
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px; 
+    background-color: #e63909;
+    border: 10px solid #897631;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 100px auto;
+    top: calc(50% - 315px); 
+    left: calc(50% - 200px); 
+    overflow: hidden;
+}
+
+.flame {
+    position: absolute;
+    width: 100%; /* uses 100% of the grioll size */
+    height: 100%; 
+    background: radial-gradient(circle, rgba(255, 94, 0, 0.9), rgba(255, 154, 0, 0.7), rgba(255, 72, 0, 0.5));
+    animation: flicker 1s infinite alternate; /* this is like how fast it flickers */
+    z-index: 0; 
+}
+
+/* Flame animation */
+@keyframes flicker {
+    0%, 100% {opacity: 0.7; 
+    }
+    50% {opacity: 1; 
+    }
+}
+
+.grill-lines-horizontal, .grill-lines-vertical {
+    position: absolute;
+    background-color: #bbb;
+}
+
+.grill-lines-horizontal {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #c6c2c2;
+}
+
+
+.line1 { top: 40px; }  
+.line2 { top: 80px; }  
+.line3 { top: 120px; } 
+.line4 { top: 160px; } 
+.line5 { top: 200px; } 
+.line6 { top: 240px; } 
+.line7 { top: 280px; } 
+.line8 { top: 320px; } 
+.line9 { top: 360px; } 
+
+
+.grill-lines-vertical {
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    background-color: #c6c2c2;
+}
+
+.line1v { left: 35px; } 
+.line2v { left: 75px; }
+.line3v { left: 115px; }
+.line4v { left: 155px; }
+.line5v { left: 195px; }
+.line6v { left: 235px; }
+.line7v { left: 275px; }
+.line8v { left: 315px; }
+.line9v { left: 355px; }
+
+.smoke {
+  background-image: radial-gradient(
+    ellipse at center,
+    rgba(33, 33, 33, 0.3) 0%,
+    transparent 60%);
+  position: absolute;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 60px;
+  z-index: 1000;
+  opacity: 0.8;
+  animation: roastSmoke 5s ease-in-out infinite;
+
+
+  &:before {
+    content: "";
+    border-radius: 50%;
+    background-image: radial-gradient(
+      ellipse at center,
+      rgba(33, 33, 33, 0.2) 0%,
+      transparent 60%
+    );
+    position: absolute;
+    top: -80px;
+    left: 10px;
+    width: 80px;
+    height: 50px;
+    opacity: 0.6;
+    animation: roastSmoke 6s ease-in-out infinite;
+  }
+
+  &:after {
+    content: "";
+    border-radius: 50%;
+    background-image: radial-gradient(
+      ellipse at center,
+      rgba(33, 33, 33, 0.2) 0%,
+      transparent 60%
+    );
+    position: absolute;
+    top: -160px;
+    left: 20px;
+    width: 60px;
+    height: 40px;
+    opacity: 0.4;
+    animation: roastSmoke 7s ease-in-out infinite;
+  }
+}
+
+.meat{ /*raw meat */
+    transition: all 1.5s ease;
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius: 50% / 30% 70% 25% 50%;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle at 30% 30%, 
+                                #ff6b6b 0%, /* Bright pinkish-red */
+                                #d9534f 30%, /* Deeper red toward the center */
+                                #b03a2e 60%); /* Darker red for depth */
+    box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    z-index: 1;
+
+    top: 200px;
+    left: 670px;
+    animation-name: moveMeat;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    z-index: 1000;
+}
+
+.meat:before,
+.meat:after {
+    content: '';
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 10%, transparent 40%);
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+
+.meat:before {
+    transform: rotate(30deg);
+    background: radial-gradient(circle at 20% 50%,
+                                rgba(255,255,255,0.8) 5%,
+                                transparent 30%),
+                radial-gradient(circle at 80% 30%,
+                                rgba(255,255,255,0.6) 5%,
+                                transparent 35%);
+}
+
+.meat:after {
+    transform: rotate(-30deg);
+    background: radial-gradient(circle at 70% 60%,
+                                rgba(255,255,255,0.7) 5%,
+                                transparent 35%),
+                radial-gradient(circle at 40% 20%,
+                                rgba(255,255,255,0.5) 10%,
+                                transparent 50%);
+}
+.meat:hover { /* cooked meat */
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius: 50% / 30% 70% 25% 50%;
+    box-shadow:
+    0 0 0 6px rgba(255,255,255,.3) inset,
+    0 0 6px rgba(33,33,33,.3);
+    position: absolute;
+    width: 50px;
+    height: 50px;
+
+    background: #a75e3d;
+
+}
+.meat:hover:before,
+.meat:hover:after {
+    border-radius: 45%;
+    box-shadow:
+    15px 0 0 0 rgba(66, 66, 66, 0.2),
+    30px 0 0 0 rgba(33,33,33,.2);
+    position: absolute;
+    display: block;
+    width: 6px;
+    height: 50%;
+    background: rgba(33,33,33,.2);
+    }
+    
+.meat:hover:before {
+    transform: rotate(30deg);
+    top: 5px;
+    left: 15px;
+    }
+    
+.meat:hover:after {
+    transform: rotate(-60deg);
+    top: 20px;
+    left: 15px;
+    }
+
+.meat:active { /*burnt meat */
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius: 50% / 30% 70% 25% 50%;
+    width: 50px;
+    height: 50px;
+    background: #774130;
+    box-shadow: 0 0 0 6px rgba(0,0,0,.6) inset,
+                0 0 15px rgba(0,0,0,.5);
+    position: absolute;
+    z-index: 1;
+
+}
+.meat:active:before,
+.meat:active:after {
+    content:'';
+    border-radius: 50%;
+    box-shadow: 10px 0 0 0 rgba(0,0,0,.6),
+                20px 0 0 0 rgba(0,0,0,.6);
+    position: absolute;
+    display: block;
+    width: 6px;
+    height: 60%;
+    background: rgba(0,0,0, 0.6); /* burn marks */
+}
+
+.meat:active:before {
+    transform: rotate(30deg);
+    /* top: 15px;
+    left: 30px; */
+    top: 5px;
+    left: 20px;
+}
+
+.meat:active:after {
+    transform: rotate(-30deg);
+    /* top: 27px;
+    left: 25px; */
+    top: 17px;
+    left: 15px;
+}
+
+
+/* sausage */
+.sausage { /* raw */
+    transition: all 1.5s ease;
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius:10px;
+    box-shadow:
+        -6px 0 8px 0 rgba(92,0,0,.8) inset,
+        2px 0 2px 0 rgba(33,33,33,.5),
+        0 0 5px rgba(33,33,33,.5)
+    ;
+    position: absolute;
+    opacity:0;
+    width: 20px;
+    height: 80px;
+    background: rgb(245, 86, 86);
+    z-index: 1;
+
+    animation-name: moveSausage;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+}
+.sausage:hover { /* cooked */
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius:10px;
+    box-shadow:
+        -6px 0 8px 0 rgba(92,0,0,.8) inset,
+        2px 0 2px 0 rgba(33,33,33,.5),
+        0 0 5px rgba(33,33,33,.5)
+    ;
+    position: absolute;
+    width: 20px;
+    height: 80px;
+    background: rgb(136, 1, 1);
+    z-index: 1;
+}
+.sausage:active { /* burnt */
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius:10px;
+    box-shadow:
+        -6px 0 8px 0 rgba(92,0,0,.8) inset,
+        2px 0 2px 0 rgba(33,33,33,.6),
+        0 0 5px rgba(33,33,33,.6)
+    ;
+    position: absolute;
+    width: 20px;
+    height: 80px;
+    background: rgb(36, 1, 1);
+    z-index: 1;
+}
+
+/* Shrimp */
+.shrimp {
+    transition: all 1.5s ease;
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius:60% / 30% 40% 10% 70%;
+    background-image:
+    radial-gradient(
+        circle at center right,
+        transparent 67%,
+        #e45f17 68%,
+        #ee8b56 74%,
+        #ee8b56 85%,
+        rgba(33,33,33,.2) 86%,
+        transparent 90%
+    );
+    position: absolute;
+    display: block;
+    width: 86px;
+    height: 70px;
+    z-index: 1;
+
+    opacity: 0;
+    animation-name: moveShrimp;
+    animation-duration:3s;
+    animation-delay: 6s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+.shrimp:before {
+    content: '';
+    transform:rotate(24deg);
+    border-radius:85% 85% 50% 50% / 120% 120% 50% 50%;
+    box-shadow:
+        1px -35px 0 -7px #ee8b56,
+        0 -36px 1px -7px rgba(33,33,33,.2),
+        5px -23px 0 -8px #ee8b56,
+        5px -23px 1px -7px rgba(33,33,33,.2),
+        0 -2px 0 0 rgba(222,222,222,.3) inset,
+        -2px 1px 2px rgba(33,33,33,.2)
+        ;
+    position: absolute;
+    top: -24px;
+    left: 15px;
+    display: block;
+    width: 18px;
+    height: 45px;
+    opacity: 100%;
+    background: #ee8b56;
+}
+.shrimp:after {
+    content: '';
+    border-radius:50%;
+    background-image:
+    radial-gradient(
+        circle at top center,
+        #ee8b56 35%,
+        transparent 36%
+    ),
+    radial-gradient(
+        circle at center left,
+        #ee8b56 27%,
+        #ee7c3f 37%,
+        transparent 38%
+    )
+    ;
+    box-shadow:
+        -13px -86px 0 -9px rgba(222,222,222,.5),
+        -14px -85px 0 -7px rgb(33,33,33)
+    ;
+    position: absolute;
+    top: 60px;
+    left: 25px;
+    display: block;
+    width: 22px;
+    height: 22px;
+    z-index: 10;
+}
+.shrimp:hover {
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius:60% / 30% 40% 10% 70%;
+    background-image:
+    radial-gradient(
+        circle at center right,
+        transparent 67%,
+        #CC4A04 68%,
+        #EF6921 74%,
+        #EF6921 85%,
+        rgba(33,33,33,.2) 86%,
+        transparent 90%
+    );
+    position: absolute;
+    display: block;
+    width: 86px;
+    height: 70px;
+
+}
+.shrimp:hover:before {
+    transform:rotate(24deg);
+    border-radius:85% 85% 50% 50% / 120% 120% 50% 50%;
+    box-shadow:
+        1px -35px 0 -7px #EF6921,
+        0 -36px 1px -7px rgba(33,33,33,.2),
+        5px -23px 0 -8px #EF6921,
+        5px -23px 1px -7px rgba(33,33,33,.2),
+        0 -2px 0 0 rgba(222,222,222,.3) inset,
+        -2px 1px 2px rgba(33,33,33,.2)
+        ;
+    position: absolute;
+    top: -24px;
+    left: 15px;
+    display: block;
+    width: 18px;
+    height: 45px;
+    background: #EF6921;
+}
+.shrimp:hover:after {
+    border-radius:50%;
+    background-image:
+    radial-gradient(
+        circle at top center,
+        #EF6921 35%,
+        transparent 36%
+    ),
+    radial-gradient(
+        circle at center left,
+        #EF6921 27%,
+        #CC4A04 37%,
+        transparent 38%
+    )
+    ;
+    box-shadow:
+        -13px -86px 0 -9px rgba(222,222,222,.5),
+        -14px -85px 0 -7px rgb(33,33,33)
+    ;
+    position: absolute;
+    top: 60px;
+    left: 25px;
+    display: block;
+    width: 22px;
+    height: 22px;
+}
+.shrimp:active {
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    border-radius:60% / 30% 40% 10% 70%;
+    background-image:
+    radial-gradient(
+        circle at center right,
+        transparent 67%,
+        #331201 68%,
+        #572002 74%,
+        #572002 85%,
+        rgba(33,33,33,.2) 86%,
+        transparent 90%
+    );
+    position: absolute;
+    display: block;
+    width: 86px;
+    height: 70px;
+    z-index: 1;
+}
+.shrimp:active:before {
+    transform:rotate(24deg);
+    border-radius:85% 85% 50% 50% / 120% 120% 50% 50%;
+    box-shadow:
+        1px -35px 0 -7px #572002,
+        0 -36px 1px -7px rgba(33,33,33,.2),
+        5px -23px 0 -8px #572002,
+        5px -23px 1px -7px rgba(33,33,33,.2),
+        0 -2px 0 0 rgba(222,222,222,.3) inset,
+        -2px 1px 2px rgba(33,33,33,.2)
+        ;
+    position: absolute;
+    top: -24px;
+    left: 15px;
+    display: block;
+    width: 18px;
+    height: 45px;
+    background: #572002;
+}
+.shrimp:active:after {
+    border-radius:50%;
+    background-image:
+    radial-gradient(
+        circle at top center,
+        #572002 35%,
+        transparent 36%
+    ),
+    radial-gradient(
+        circle at center left,
+        #572002 27%,
+        #270f02 37%,
+        transparent 38%
+    )
+    ;
+    box-shadow:
+        -13px -86px 0 -9px rgba(222,222,222,.5),
+        -14px -85px 0 -7px rgb(33,33,33)
+    ;
+    position: absolute;
+    top: 60px;
+    left: 25px;
+    display: block;
+    width: 22px;
+    height: 22px;
+}
+
+.mushroom {
+    z-index: 99;
+    transition: all 1.5s ease;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+
+    position: absolute;
+    width: 30px;
+    height: 60px;
+    background-color: #e0d5b9; 
+    border-radius: 15px;
+
+    opacity: 0;
+    animation-name: moveMushroom;
+    animation-duration: 3s;
+    animation-delay: 9s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+.mushroom:before, .mushroom:after {
+    transition: all 1.5s ease;
+    content:"";
+    background-color: #b5824d; 
+    border-radius: 50% 50% 0 0; 
+    top: -20px; 
+    width: 50px; 
+    height: 35px; 
+    position: absolute;
+}
+.mushroom:before {
+    left: -10px;
+}
+
+.mushroom:hover {
+    background-color: #c3c9c1;
+}
+.mushroom:hover:before,.mushroom:hover:after{
+    background-color: #5a0e0e;
+    border-radius: 80% 0 0 10%;
+    top: -20px;
+    right: 16px;
+    width: 35px;
+    height: 35px;
+}
+.mushroom:hover:before{
+    right:3px;
+}
+.mushroom:hover:after{
+    transform: scaleX(-1);
+    left: 7px;
+}
+
+.mushroom:active {
+    background-color: #1b1a1a;
+}
+.mushroom:active:before, .mushroom:active:after{
+    background-color: #222222;
+    border-radius: 80% 0 0 10%;
+    top: -20px;
+    right: 16px;
+    width: 35px;
+    height: 35px;
+}
+.mushroom:active:before{
+    right: 3px;
+}
+.mushroom:active:after{
+    transform: scaleX(-1);
+    left: 7px;
+}
+
+.cube {
+    transition: all 1.5s ease;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(45deg, #ff4d4d 40%, #ff6666 60%);
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+
+    transform: rotate(30deg);
+    animation-name: moveCubes;
+    animation-delay: 12s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-duration: 3s;
+}
+.cube:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1) 10px,
+        transparent 10px,
+        transparent 20px
+    );
+    border-radius: 10px;
+}
+.cube:hover{
+    background: linear-gradient(45deg, #B45227 40%, #eb9b6c 60%);
+}
+.cube:hover:before{
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(241, 207, 179, 0.1),
+        rgba(245, 199, 168, 0.1) 10px,
+        transparent 10px,
+        transparent 20px
+    );
+}
+.cube:active{
+    background: linear=gradient(45deg, #160a05 40%, #331f15 60%);
+}
+.cube:active:before{
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(99, 83, 70, 0.1),
+        rgba(109, 85, 68, 0.1) 10px,
+        transparent 10px,
+        transparent 20px
+    );
+}
+.cube1 {
+    opacity: 0;
+    left: -60px;
+    top: -20px;
+    animation-name: moveCube1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay:12s;
+}
+.cube2 {
+    opacity: 0;
+
+    left: -30px;
+    top: -30px;
+    transform: rotate(15deg);
+    animation-name: moveCube2;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay: 12.1s;
+}
+.cube3 {
+    opacity: 0;
+
+    top: -40px;
+    transform: rotate(-10deg);
+    animation-name: moveCube3;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay: 12.2s;
+}
+.cube4 {
+    opacity: 0;
+
+    transform: rotate(30deg);
+    animation-name: moveCube4;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay: 12.3s;
+}
+.pork-belly {
+    transition: all 1.5s ease;
+    width: 40px;
+    height: 160px;
+    background: linear-gradient(45deg,
+      #ffb49b 20%, /* Meat color */
+      #ffb396 30%, /* Lighter fat section */
+      #ff8d76 40%, /* Meat color */
+      #ffd2c0 55%, /* Fat section */
+      #fc7d64 65%, /* Meat color */
+      #ffb298 75% /* Meat color */
+    );
+    border-radius: 15px;
+    position: absolute;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
+
+    animation-name: movePorkBelly;
+    animation-duration:3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-delay: 15s;
+    opacity: 0;
+}
+.pork-belly:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        40deg,
+        rgba(255, 255, 255, 0.151),
+        rgba(255, 255, 255, 0.3) 7px,
+        transparent 20px,
+        transparent 35px
+    );
+    border-radius: 15px;
+    opacity: 0.6;
+}
+
+  /* Creating additional layers of streaks */
+.pork-belly:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.2) 12px,
+        transparent 12px,
+        transparent 24px
+    );
+    border-radius: 15px;
+    opacity: 0.4;
+}
+
+.pork-belly:hover {
+    transition: all 1.5s ease;
+    width: 40px;
+    height: 160px;
+    background: linear-gradient(45deg,
+      #ff9b7a 20%, /* Meat color */
+      #ffb396 30%, /* Lighter fat section */
+      #ff6f52 40%, /* Meat color */
+      #ffb396 55%, /* Fat section */
+      #ff6f52 65%, /* Meat color */
+      #ff9b7a 75% /* Meat color */
+    );
+    border-radius: 15px;
+    position: absolute;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.pork-belly:hover:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        40deg,
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0.3) 7px,
+        transparent 20px,
+        transparent 35px
+    );
+    border-radius: 15px;
+    opacity: 0.6;
+}
+.pork-belly:hover:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.2) 12px,
+        transparent 12px,
+        transparent 24px
+    );
+    border-radius: 15px;
+    opacity: 0.4;
+}
+.pork-belly:active {
+    transition: all 1.5s ease;
+    width: 40px;
+    height: 160px;
+    background: linear-gradient(45deg, 
+      #aa7766 20%, /* Meat color */
+      #a87662 30%, /* Lighter fat section */
+      #86483c 40%, /* Meat color */
+      #ceaa9c 55%, /* Fat section */
+      #994b3c 65%, /* Meat color */
+      #a37161 75% /* Meat color */
+    );
+    border-radius: 15px;
+    position: absolute;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
+
+    animation-name: movePorkBelly;
+    animation-duration:3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    opacity: 0;
+}
+.pork-belly:active:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        40deg,
+        rgba(17, 6, 6, 0.151),
+        rgba(54, 31, 31, 0.3) 7px,
+        transparent 20px,
+        transparent 35px
+    );
+    border-radius: 15px;
+    opacity: 0.6;
+}
+
+.plateKimchi {
+    position: absolute;;
+    width: 140px;
+    height: 140px;
+
+    background: radial-gradient(circle, #f9f9f9 60%, #ccc 100%);
+    border-radius: 50%;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+
+    top: 50px;
+    left: 300px;
+}
+.kimchi {
+    position: relative;
+    width: 40px;
+    height: 50px;
+    background: linear-gradient(45deg, #ff6b3a 10%, #ff9045 60%, #ff441d 100%);
+    border-radius: 60% 40% 70% 50%;
+    box-shadow: 
+        0 5px 5px rgba(0,0,0,0.3), 
+        inset 0 -3px 5px rgba(0,0,0,0.1), 
+        inset 0 3px 3px rgba(255,255,255,0.2);
+    margin: 10px;
+    transform: rotate(calc(15deg * var(--rotate, 0)));
+}
+.kimchi::before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 30px;
+    background: radial-gradient(circle at 30% 30%, #ff441d, transparent 60%);
+    border-radius: 60% 40% 50% 60%;
+    top: 10px;
+    left: 10px;
+    transform: rotate(-10deg);
+}
+.kimchi::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 20px;
+    background: linear-gradient(45deg, #ff9b57 30%, #ff6b3a 100%);
+    border-radius: 50% 50% 40% 40%;
+    top: 30px;
+    right: 5px;
+    box-shadow: 
+        0 3px 3px rgba(0,0,0,0.2), 
+        inset 0 -2px 3px rgba(255,255,255,0.1);
+}
+.kimchi:nth-child(1) {
+    --rotate: -1;
+}
+
+.kimchi:nth-child(2) {
+    --rotate: 2;
+}
+
+.kimchi:nth-child(3) {
+    --rotate: -2;
+}
+
+.kimchi:nth-child(4) {
+    --rotate: 1;
+}
+
+.plateBeanSprout {
+    position: absolute;;
+    width: 140px;
+    height: 140px;
+
+    background: radial-gradient(circle, #f9f9f9 60%, #ccc 100%);
+    border-radius: 50%;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+
+    top: 215px;
+    left: 300px;
+}
+.bean-sprout {
+    position: relative;
+    width: 6px;
+    height: 50px;
+    background: linear-gradient(180deg, #fafafa 0%, #f4f4f4 50%, #fff 100%);
+    border-radius: 50px / 100px; /* More natural curvature */
+    margin: 15px;
+    box-shadow: 
+        0 1px 2px rgba(0, 0, 0, 0.1), 
+        inset 0 2px 1px rgba(0,0,0,0.05), 
+        inset 0 -2px 3px rgba(255,255,255,0.8); /* Slight texture */
+    transform: rotate(calc(10deg * var(--rotate, 0))) scaleY(calc(1 + var(--stretch, 0)));
+    z-index: calc(2 + var(--layer, 0)); /* Random layering */
+}
+
+/* Bean Sprout Tips */
+.bean-sprout::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: -4px;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, #ffdd57 50%, #f5c842 100%);
+    border-radius: 50%;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.15); /* Shadow for realism */
+}
+/* Optional: Add slight rotation and stretch for each sprout */
+.bean-sprout:nth-child(1) {
+    --rotate: -2;
+    --stretch: 0.2;
+    --layer: 1;
+}
+
+.bean-sprout:nth-child(2) {
+    --rotate: 4;
+    --stretch: -0.1;
+    --layer: 0;
+}
+
+.bean-sprout:nth-child(3) {
+    --rotate: 3;
+    --stretch: 0.1;
+    --layer: 2;
+}
+
+.bean-sprout:nth-child(4) {
+    --rotate: 19;
+    --stretch: 0.3;
+    --layer: -1;
+}
+
+.bean-sprout:nth-child(5) {
+    --rotate: 15;
+    --stretch: 0.15;
+    --layer: 2;
+}
+
+.bean-sprout:nth-child(6) {
+    --rotate: 2;
+    --stretch: -0.1;
+    --layer: 1;
+}
+
+.bean-sprout:nth-child(7) {
+    --rotate: 6;
+    --stretch: 0.05;
+    --layer: 0;
+}
+  /* Creating additional layers of streaks */
+.pork-belly:active:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        -45deg,
+        rgba(70, 63, 63, 0.2),
+        rgba(73, 69, 69, 0.2) 12px,
+        transparent 12px,
+        transparent 24px
+    );
+    border-radius: 15px;
+    opacity: 0.4;
+}
+
+.plates-container-right {
+    position: absolute;
+    top: 100px;
+    right: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.plate {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    border: 3px solid #ccc;
+    margin-bottom: 20px;
+}
+.plates-container-left {
+    position: absolute;
+    top: 100px;
+    left: 120px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;  
+}
+
+/* animations */
+@keyframes roastSmoke {
+  0% {
+    transform: scale(0.2) translateY(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.2) translateY(-200px);
+    opacity: 0;
+  }
+}
+
+@keyframes moveMeat{
+    0%{left: -200px; top: 0px; opacity: 50%;}
+    100%{left: 50px; top: 50px; opacity: 100%}
+}
+@keyframes moveShrimp{
+    0%{left: -200px; top:0px; opacity: 0;}
+    100%{left:50px; top: 150px; opacity: 100%}
+}
+@keyframes moveSausage{
+    0%{left:-200px; top:0px;opacity: 0;}
+    100%{left: 120px; top: 40px;opacity: 100%;}
+}
+@keyframes moveMushroom{
+    0%{left:-200px; top:0px; opacity: 0;}
+    100%{left: 120px; top:150px; opacity: 100%;}
+}
+@keyframes moveCubes{
+    0%{left: 0; top:0; opacity: 0}
+    100%{left: 840px; top: 210px; opacity: 100%}
+}
+@keyframes moveCube1{
+    0%{left:0; top: 0; opacity: 0;}
+    100%{left:170px; top:50px; opacity: 100%}
+}
+@keyframes moveCube2{
+    0%{left: 0; top: 0; opacity: 0;}
+    100%{left: 200px; top: 60px; opacity: 100%;}
+}
+@keyframes moveCube3{
+    0%{left: 0; top: 0; opacity: 0;}
+    100%{left: 230px; top: 75px; opacity: 100%;}
+}
+@keyframes moveCube4{
+    0%{left: 0; top: 0; opacity: 0;}
+    100%{left: 265px; top: 70px; opacity: 100%;}
+}
+@keyframes movePorkBelly{
+    0%{left: 0; top: 0; opacity: 0}
+    100%{left: 270px; top: 100px; opacity: 100%; transform: rotate(90deg);}
+}

@@ -152,8 +152,8 @@ p {
 
   .meat-image {
     display: grid; /* make the container a grid container */
-    grid-template-columns: repeat(3, 1fr); /* create three grid columns */
-    grid-template-rows: repeat(2, 1fr); /* create three grid rows */
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(2, 1fr);
   }
   
 

@@ -68,10 +68,10 @@ body {
   margin-bottom: 15px;
   border-bottom: 3px solid var(--highlight-color);
   text-transform: uppercase;
-  animation: slideIn 0.5s ease; /* Slide in animation */
-  animation-delay: 0.5s; /* Delay for section titles */
+  animation: slideIn 0.5s ease;
+  animation-delay: 0.5s;
   opacity: 0; /* Start hidden */
-  animation-fill-mode: forwards; /* Keep final state */
+  animation-fill-mode: forwards;
 }
 
 @keyframes slideIn {
